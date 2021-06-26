@@ -1,18 +1,21 @@
-<header class="main-header" *ngIf="accountService.currentUser$| async">
+<header class="main-header">
     <div>
-        <a href="" class="nav-brand">MTS</a>
+        <a routerLink='/home' class="nav-brand">MTS</a>
     </div>
     <div class="home-link">
-        <a href="">Home</a>
+        <a routerLink='/home' routerLinkActive='active' *ngIf="accountService.currentUser$| async">Home</a>
     </div>
     <nav class="main-nav">
-        <div class="dropdown">
+        <div class="dropdown" *ngIf="accountService.currentUser$| async">
             <a href="" class="dropbtn"><img src="../../assets/iconUser.png" alt=""></a>
             <div class="dropdown-menu">
                 <a href="">Edit Profile</a>
                 <a href=""(click)="logout()">Logout</a>
             </div>
-
+        </div>
+        
+        <div class="login-link" *ngIf="(accountService.currentUser$| async) === null">
+            <a routerLink='/auth'>Authentication</a>
         </div>
 
     </nav>
