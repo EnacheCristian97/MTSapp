@@ -30,9 +30,6 @@ export class LoginComponent implements OnInit {
     this.accountService.login(this.model).subscribe(response => 
       {
         this.router.navigateByUrl('/home');
-      }, error => {
-        console.log(error);
-        this.toastr.error(error.error);
       })
   }
 

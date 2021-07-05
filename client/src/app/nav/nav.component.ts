@@ -25,6 +25,11 @@ export class NavComponent implements OnInit {
     this.router.navigateByUrl('/auth')
   }
 
+  menuToggle() {
+    const toggleMenu = document.querySelector('.menu');
+    toggleMenu.classList.toggle('active');
+  }
+
   
 
 

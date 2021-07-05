@@ -1,9 +1,49 @@
 *{
     box-sizing: border-box;
     margin: 0;
+    padding: 0;
+    
     
 }
 
 body {
-    background-color: #559E54;
+    overflow: hidden; 
+}
+
+section {
+    min-height: 100vh;
+    background:linear-gradient(to bottom, #444444, #111111);
+}
+
+section .color {
+    position: absolute;
+    filter: blur(150px);
+}
+
+section .color:nth-child(1) {
+    top: -150px;
+    width: 600px;
+    height: 600px;
+    background: #d4770d;
+    right: 35%;
+}
+
+section .color:nth-child(2) {
+    bottom: -150px;
+    width: 500px;
+    height: 500px;
+    background: #f0ec00;
+    left: 65%;
+}
+
+section .color:nth-child(3) {
+    bottom: 50px;
+    width: 500px;
+    height: 500px;
+    background: #00e9fa;
+    right: 60%;
+}
+
+app-root {
+    position: relative;
 }

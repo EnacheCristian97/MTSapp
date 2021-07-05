@@ -1,16 +1,22 @@
 <header class="main-header">
     <div>
-        <a routerLink='/home' class="nav-brand">MTS</a>
+        <img src="../../assets/MT.png" alt="" class="brand-img">
     </div>
     <div class="home-link">
         <a routerLink='/home' routerLinkActive='active' *ngIf="accountService.currentUser$| async">Home</a>
     </div>
     <nav class="main-nav">
-        <div class="dropdown" *ngIf="accountService.currentUser$| async">
-            <a href="" class="dropbtn"><img src="../../assets/iconUser.png" alt=""></a>
-            <div class="dropdown-menu">
-                <a href="">Edit Profile</a>
-                <a href=""(click)="logout()">Logout</a>
+        <div class="action" *ngIf="accountService.currentUser$| async">
+            <div class="profile" (click)="menuToggle()">
+                <img src="../../assets/iconUser.png" alt="">
+            </div>
+            <div class="menu">
+                <h3>Someone Famous</h3>
+                <ul>
+                    <li><img src="../../assets/user (1).png" alt=""><a>My Profile</a></li>
+                    <li><img src="../../assets/mail-inbox-app.png" alt=""><a>Inbox</a></li>
+                    <li><img src="..//../assets/exit.png" alt="" (click)="logout()"><a (click)="logout()">Logout</a></li>
+                </ul>
             </div>
         </div>
         
