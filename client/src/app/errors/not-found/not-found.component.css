@@ -11,6 +11,13 @@
     transform: translate(-50%, 50%);
 }
 
+.container p 
+{
+    font-size: 200px;
+    font-weight: 900;
+    color: #fff;
+}
+
 .container h1 {
     color: #fff;
     width: 100%;
