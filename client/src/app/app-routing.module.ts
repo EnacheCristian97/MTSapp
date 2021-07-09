@@ -4,7 +4,8 @@ import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { ServerErrorComponent } from './errors/server-error/server-error.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
-import { MemberDetailComponent } from './member-detail/member-detail.component';
+import { MemberDetailComponent } from './members/member-detail/member-detail.component';
+import { MemberListComponent } from './members/member-list/member-list.component';
 import { MessagesComponent } from './messages/messages.component';
 import { AuthGuard } from './_guards/auth.guard';
 
@@ -16,7 +17,8 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     children: [
       {path: 'home', component: HomeComponent},
-      {path: 'members/:id', component: MemberDetailComponent},
+      {path: 'members', component: MemberListComponent},
+      {path: 'members/:username', component: MemberDetailComponent},
       {path: 'messages', component: MessagesComponent,canActivate: [AuthGuard]},     
     ]
   },

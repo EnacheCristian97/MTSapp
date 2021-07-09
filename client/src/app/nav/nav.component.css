@@ -2,53 +2,54 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    
+    z-index: 1;  
 }
 
 .main-header{
-    display: inline-block;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
-    padding: 8px 12px;
+    padding: 0;
     margin: 0;
     background:  #2e2e2e; 
 }
 
-.main-header > div {
-    display: inline-block;
-    vertical-align: middle;
-    margin-left: 10px;
-}
-
 .brand-img{
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
 }
 
 .home-link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-left: 10px;
-    text-align: center;
+    height: 54px;
+    text-align:center;
 }
 
 .home-link a {
-    font-size: 16px;
+    font-size: 25px;
+    letter-spacing: 2px;
     margin-left: 15px;
+    height: 100%;
     padding: 10px;
-    border-radius: 20px;
+    border-radius: 0;
     font-weight: 900;
     text-decoration: none;
+    text-align: center;
     text-transform: uppercase;
     color: #00e9fa;
-    border: 2px solid #00e9fa;
     background-color: transparent;
 }
 
 .home-link a:hover{
-    background:transparent;
-    color: #fff;
-    border: 2px solid #fff;
+    color: #00e9fa;
 }
 
-.home-link:active{
+.home-link:active a{
     transform: scale(0.90);
     
 }
@@ -57,6 +58,11 @@
     background:transparent;
     color: #fff;
     border: 2px solid #fff;
+}
+
+.home-link a.isActive{
+    background: rgba(255, 255, 255, 0.691);
+    color: #00e9fa;
 }
 
 .main-nav {
@@ -73,15 +79,15 @@
 
 .action{
     position: fixed;
-    top: 10px;
+    top: 0px;
     right: 30px;
 }
 
 .action .profile
 {
     position: relative;
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     overflow: hidden;
     cursor: pointer;
@@ -100,8 +106,8 @@
 .action .menu
 {
     position: absolute;
-    top: 80px;
-    right: -10px;
+    top: 65px;
+    right: -14px;
     padding: 10px 20px;
     background: #fff;
     width: 200px;
@@ -110,6 +116,8 @@
     transition: 0.5s;
     visibility: hidden;
     opacity: 0;
+    z-index: 10;
+    
 }
 
 .action .menu.active
@@ -181,7 +189,7 @@
     font-size: 20px;
     text-transform: uppercase;;
     font-weight: 900;
-    width: calc(100% - (-90px));
+    width: calc(100% - (20px));
     
 }
 

@@ -1,18 +1,17 @@
 *{
     box-sizing: border-box;
     margin: 0;
-    padding: 0;
-    
-    
+    padding: 0;  
 }
 
 body {
-    overflow: hidden; 
+    overflow-x: hidden;
 }
 
 section {
     min-height: 100vh;
     background:linear-gradient(to bottom, #444444, #111111);
+    overflow: hidden;
 }
 
 section .color {
@@ -29,7 +28,7 @@ section .color:nth-child(1) {
 }
 
 section .color:nth-child(2) {
-    bottom: -150px;
+    bottom: 0px;
     width: 500px;
     height: 500px;
     background: #f0ec00;
