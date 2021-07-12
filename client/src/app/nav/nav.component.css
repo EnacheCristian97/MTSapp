@@ -2,7 +2,8 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    z-index: 1;  
+    z-index: 1;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .main-header{
@@ -19,13 +20,20 @@
     width: 50px;
     height: 50px;
     margin-left: 10px;
+    margin-top: 2px;
+}
+
+.links{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
 }
 
 .home-link{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 10px;
     height: 54px;
     text-align:center;
 }
@@ -33,7 +41,7 @@
 .home-link a {
     font-size: 25px;
     letter-spacing: 2px;
-    margin-left: 15px;
+    margin-left: 0px;
     height: 100%;
     padding: 10px;
     border-radius: 0;
@@ -41,28 +49,27 @@
     text-decoration: none;
     text-align: center;
     text-transform: uppercase;
-    color: #00e9fa;
+    color: rgb(134, 134, 134);
     background-color: transparent;
 }
 
 .home-link a:hover{
-    color: #00e9fa;
+    color: #fff;
 }
 
 .home-link:active a{
-    transform: scale(0.90);
+    transform: scale(0.98);
     
 }
 
 .home-link a:active{
-    background:transparent;
-    color: #fff;
-    border: 2px solid #fff;
+    background:#fff;
+    color: #555;
 }
 
-.home-link a.isActive{
-    background: rgba(255, 255, 255, 0.691);
-    color: #00e9fa;
+.home-link a.active{
+    background:#fff;
+    color: #555;
 }
 
 .main-nav {
@@ -72,14 +79,9 @@
     width: calc(100% - 210px);
 }
 
-.dropbtn, img{
-    width: 40px;
-    height: 40px;
-}
-
 .action{
     position: fixed;
-    top: 0px;
+    top: 2px;
     right: 30px;
 }
 
@@ -100,8 +102,14 @@
     left: 0;
     width: 100%;
     height: 100%;
+    border-radius: 50%;
     object-fit: cover;
 }
+
+.action .profile.active img
+{
+    border: 2px solid #fff;
+} 
 
 .action .menu
 {

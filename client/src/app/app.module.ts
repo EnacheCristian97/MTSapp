@@ -21,6 +21,9 @@ import { ServerErrorComponent } from './errors/server-error/server-error.compone
 import { MemberListComponent } from './members/member-list/member-list.component';
 import { MemberCardComponent } from './members/member-card/member-card.component';
 import { JwtInterceptor } from './_interceptors/jwt.interceptor';
+import { DropdownDirective } from './shared/dropdown.directive';
+import { TabsModule } from 'ngx-bootstrap/tabs';
+import { MemberPhotoComponent } from './members/member-photo/member-photo.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +38,9 @@ import { JwtInterceptor } from './_interceptors/jwt.interceptor';
     NotFoundComponent,
     ServerErrorComponent,
     MemberListComponent,
-    MemberCardComponent
+    MemberCardComponent,
+    DropdownDirective,
+    MemberPhotoComponent
   ],
   imports: [
     BrowserModule,
@@ -43,13 +48,17 @@ import { JwtInterceptor } from './_interceptors/jwt.interceptor';
     BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
-    SharedModule
+    SharedModule,
+    TabsModule.forRoot()
   ],
   providers: [
     {provide : HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
     {provide : HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},
     LoginComponent
     
+  ],
+  exports: [
+    TabsModule
   ],
   bootstrap: [AppComponent]
 })

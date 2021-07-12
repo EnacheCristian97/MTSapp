@@ -2,18 +2,20 @@
     <div>
         <img src="../../assets/MT.png" alt="" class="brand-img">
     </div>
-    <div class="home-link" *ngIf="accountService.currentUser$| async">
-        <a routerLink='/home' routerLinkActive="'isActive'" >Home</a>
-    </div>
-    <div class="home-link" *ngIf="accountService.currentUser$| async">
-        <a routerLink='/members' routerLinkActive="router-link-active" >Members</a>
+    <div class="links">
+        <div class="home-link" *ngIf="accountService.currentUser$| async">
+            <a routerLink='/home' routerLinkActive="active" >Home</a>
+        </div>
+        <div class="home-link" *ngIf="accountService.currentUser$| async">
+            <a routerLink='/members' routerLinkActive="active" >Members</a>
+        </div>
     </div>
     <nav class="main-nav">
         <div class="action" *ngIf="accountService.currentUser$| async">
-            <div class="profile" (click)="menuToggle()">
+            <div class="profile" appDropdown >
                 <img src="../../assets/iconUser.png" alt="">
             </div>
-            <div class="menu">
+            <div class="menu" >
                 <h3>Username</h3>
                 <ul>
                     <li><img src="../../assets/user (1).png" alt=""><a>My Profile</a></li>
