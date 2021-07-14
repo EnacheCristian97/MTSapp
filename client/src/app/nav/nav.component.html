@@ -16,9 +16,9 @@
                 <img src="../../assets/iconUser.png" alt="">
             </div>
             <div class="menu" >
-                <h3>Username</h3>
+                <h3>{{user.username}}</h3>
                 <ul>
-                    <li><img src="../../assets/user (1).png" alt=""><a>My Profile</a></li>
+                    <li><img src="../../assets/user (1).png" alt=""><a routerLink='/member/edit'>My Profile</a></li>
                     <li><img src="../../assets/mail-inbox-app.png" alt=""><a>Inbox</a></li>
                     <li><img src="..//../assets/exit.png" alt="" (click)="logout()"><a (click)="logout()">Logout</a></li>
                 </ul>

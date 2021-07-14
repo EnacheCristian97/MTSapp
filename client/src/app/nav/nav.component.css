@@ -8,6 +8,7 @@
 
 .main-header{
     display: flex;
+    position: relative;
     justify-content: space-between;
     align-items: center;
     width: 100%;
@@ -80,7 +81,7 @@
 }
 
 .action{
-    position: fixed;
+    position: absolute;
     top: 2px;
     right: 30px;
 }
