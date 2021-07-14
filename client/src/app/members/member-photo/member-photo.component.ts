@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Member } from 'src/app/_models/member';
 import { Photo } from 'src/app/_models/photo';
 import { MembersService } from 'src/app/_services/members.service';
@@ -9,12 +10,18 @@ import { MembersService } from 'src/app/_services/members.service';
   styleUrls: ['./member-photo.component.css']
 })
 export class MemberPhotoComponent implements OnInit {
-  photo: Photo;
-  member: Member;
+  @Input() member: Member;
 
-  constructor(private memberService: MembersService) { }
+  constructor(private memberService: MembersService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.loadMember();
+  }
+
+  loadMember() {
+    this.memberService.getMember(this.route.snapshot.paramMap.get('username')).subscribe(member => {
+      this.member = member;
+    })
   }
 
 }

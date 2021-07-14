@@ -1,9 +1,13 @@
-<div class="card">
-    <div class="imgBox">
-        <img src="{{photo.url}}" alt="">
+<div *ngIf="member">
+    <div class="card" *ngFor="let photo of member.photos">
+        <div class="imgBox">
+            <img src="{{photo.url}}" alt="">
+        </div>
+        <div class="desc">
+            <h3>{{photo.title}}</h3>
+            <p>{{photo.desc}}</p>
+        </div>
     </div>
-    <div class="desc">
-        <h3>{{photo.title}}</h3>
-        <p>{{photo.desc}}</p>
-    </div>
+
 </div>
+

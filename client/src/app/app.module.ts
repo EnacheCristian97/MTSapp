@@ -22,7 +22,6 @@ import { MemberListComponent } from './members/member-list/member-list.component
 import { MemberCardComponent } from './members/member-card/member-card.component';
 import { JwtInterceptor } from './_interceptors/jwt.interceptor';
 import { DropdownDirective } from './shared/dropdown.directive';
-import { TabsModule } from 'ngx-bootstrap/tabs';
 import { MemberPhotoComponent } from './members/member-photo/member-photo.component';
 
 @NgModule({
@@ -49,7 +48,6 @@ import { MemberPhotoComponent } from './members/member-photo/member-photo.compon
     HttpClientModule,
     FormsModule,
     SharedModule,
-    TabsModule.forRoot()
   ],
   providers: [
     {provide : HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
@@ -58,7 +56,6 @@ import { MemberPhotoComponent } from './members/member-photo/member-photo.compon
     
   ],
   exports: [
-    TabsModule
   ],
   bootstrap: [AppComponent]
 })
