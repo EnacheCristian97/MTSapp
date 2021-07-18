@@ -26,6 +26,8 @@ import { MemberPhotoComponent } from './members/member-photo/member-photo.compon
 import { MemberEditComponent } from './members/member-edit/member-edit.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { LoadingInterceptor } from './_interceptors/loading.interceptor';
+import { PhotoEditorComponent } from './members/photo-editor/photo-editor.component';
+import { FileUploadModule } from 'ng2-file-upload';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,8 @@ import { LoadingInterceptor } from './_interceptors/loading.interceptor';
     MemberCardComponent,
     DropdownDirective,
     MemberPhotoComponent,
-    MemberEditComponent
+    MemberEditComponent,
+    PhotoEditorComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +55,8 @@ import { LoadingInterceptor } from './_interceptors/loading.interceptor';
     HttpClientModule,
     FormsModule,
     SharedModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    FileUploadModule
   ],
   providers: [
     {provide : HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},

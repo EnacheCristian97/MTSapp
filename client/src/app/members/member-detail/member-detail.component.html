@@ -6,7 +6,8 @@
         <div class="card-body">
             <div class="field">
                 <h1>Location:</h1>
-                <p>{{member.city}}, {{member.country}}</p>
+                <p>{{member.city}}</p>
+                <p>{{member.country}}</p>
             </div>
             <div class="field">
                 <h1>Age:</h1>
@@ -38,7 +39,7 @@
         </div>
         <div class="tab">
             <h3>Album</h3>
-            <app-member-photo *ngFor="let photo of member.photos"></app-member-photo>
+            <app-member-photo [member]="member"></app-member-photo>
         </div>
     </div>
 

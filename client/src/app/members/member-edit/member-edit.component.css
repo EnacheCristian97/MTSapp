@@ -14,7 +14,7 @@ padding: 40px;
 .card
 {
     display: block;
-    min-width: 250px;
+    max-width: 250px;
     height: 800px;
     position: relative;
     background: rgba(225,225,225, 0.1);
@@ -39,7 +39,7 @@ padding: 40px;
     display: block;
     justify-content: center;
     align-items: center;
-    text-align: center;
+    text-align:center;
     width: 100%;
     padding: 20px;
 }
@@ -97,7 +97,7 @@ padding: 40px;
 
 form{
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     margin: 0;
     padding: 0;
 }
@@ -106,15 +106,15 @@ form{
 {
     display: block;
     width: 100%;
-    margin-left: 20px;
+    margin-left: 5px;
     top: 0;
-    min-height: auto;
+    min-height: 800px;
     position: relative;
-    overflow: hidden;
 }
 
 .tab, .tab-albume
 {
+    width: 100%;
     display: block;
     text-align: center;
     margin-bottom: 10px;
@@ -194,8 +194,8 @@ form{
 
 .albume{
     display: block;
-    width:50%;
-    margin-left: 20px;
+    width:100%;
+    margin-left: 10px;
 }
 
 .tab-albume{

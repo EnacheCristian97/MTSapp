@@ -9,11 +9,13 @@ export class DropdownDirective {
 
   @HostBinding('class.active') isOpen = false;
 
-  @HostListener('click') toggleOpen() {
+  @HostListener('document:click', ['$event']) toggleOpen(event: Event) {
     this.isOpen = !this.isOpen;
     let part = document.querySelector('.menu');
     if (this.isOpen) this.renderer.addClass(part, 'active');
-    else this.renderer.removeClass(part, 'active');
+    else
+    this.isOpen = this.el.nativeElement.contains(event.target) ? !this.isOpen : false;
+    !this.isOpen;
   }
-
-}
+ 
+  }
