@@ -6,9 +6,58 @@
 
 .page
 {
-display: flex;
+display: block;
 justify-content:flex-start;
 padding: 40px;
+}
+
+.header{
+    width: 100%;
+    display: flex;
+    position: relative;
+    justify-content: flex-start;
+    align-items: center;
+    /* background: rgba(161, 161, 161, 0.1); */
+    background: rgba(255, 255, 255, 0.418);
+    border-radius: 10px 10px 0px 0px;
+    backdrop-filter: blur(100px);
+    box-shadow: 0px  5px 10px rgba(0,0,0, 0.4);
+    border: 1px solid rgba(225,225,225, 0.3);
+    border-right: 1px solid rgba(225,225,225, 0.2);
+    border-bottom: 1px solid rgba(225,225,225, 0.2);
+    padding: 10px;
+    z-index: 20;
+}
+
+.header .img{
+    float: left;
+    width: 340px;
+    height: 200px;
+}
+
+.header .img img
+{
+    width: 230px;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid rgba(161, 161, 161, 0.1);
+    box-shadow: 0  5px  10px rgba(0,0,0,.2);
+    position: absolute;
+    margin: 10px;
+}
+
+.header .field{
+    position: relative;
+}
+
+.header .field h3{
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.header .field p{
+    font-size: 18px;
 }
 
 .card
@@ -18,20 +67,20 @@ padding: 40px;
     min-height: auto;
     position: relative;
     background: rgba(225,225,225, 0.1);
-    border-radius: 10px;
+    border-radius: 0px 0px 0px 10px;
     backdrop-filter: blur(100px);
     box-shadow: rgba(0,0,0, 0.1);
     border: 1px solid rgba(225,225,225, 0.3);
     border-right: 1px solid rgba(225,225,225, 0.2);
     border-bottom: 1px solid rgba(225,225,225, 0.2);
+    border-top: none;
     overflow: hidden;
+    z-index: 10 ;
+    margin-left: 10px;
 }
 
-.card .img img
-{
-    width: 250px;
-    height: 250px;
-    object-fit: cover;
+.card-page{
+    display: flex;
 }
 
 .card-body
@@ -96,45 +145,26 @@ padding: 40px;
     color: rgb(22, 22, 22);
 }
 
-.info-card
-{
+tabs{
     display: block;
+    justify-content: center;
+    margin: 0px;
     width: 100%;
-    margin: 0 20px;
-    top: 0;
-    min-height: auto;
-    position: relative;
-    overflow: hidden;
-}
-
-.info-card .tab
-{
-    display: block;
-    text-align: center;
-    margin-bottom: 10px;
+    align-items: center;
     background: rgba(225,225,225, 0.1);
     padding: 15px;
-    border-radius: 10px;
+    border-radius: 0px 0px 10px 0px;
     backdrop-filter: blur(100px);
     box-shadow: rgba(0,0,0, 0.1);
     border: 1px solid rgba(225,225,225, 0.3);
     border-right: 1px solid rgba(225,225,225, 0.2);
     border-bottom: 1px solid rgba(225,225,225, 0.2);
+    margin-right: 10px;
     min-height: auto;
+    border-top: none;
+    z-index: 1;
 }
 
-.info-card .tab h3
-{
-    color: #fff;
-    margin: 0 auto;
-    letter-spacing: 2px;
-    width: 200px;
-    font-size: 30px;
-    border-bottom: 2px solid rgba(231, 228, 228, 0.287) ;
-}
-
-.info-card .tab p
-{
-    color: rgb(17, 17, 17);
-    font-size: 20px;
+tab {
+    margin: 10px;
 }

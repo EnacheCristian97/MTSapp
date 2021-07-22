@@ -28,6 +28,8 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { LoadingInterceptor } from './_interceptors/loading.interceptor';
 import { PhotoEditorComponent } from './members/photo-editor/photo-editor.component';
 import { FileUploadModule } from 'ng2-file-upload';
+import { Tab } from './shared/tab.directive';
+import { Tabs } from './shared/tabs.directive';
 
 @NgModule({
   declarations: [
@@ -46,7 +48,9 @@ import { FileUploadModule } from 'ng2-file-upload';
     DropdownDirective,
     MemberPhotoComponent,
     MemberEditComponent,
-    PhotoEditorComponent
+    PhotoEditorComponent,
+    Tabs,
+    Tab
   ],
   imports: [
     BrowserModule,

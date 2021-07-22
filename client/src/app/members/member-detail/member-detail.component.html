@@ -1,46 +1,60 @@
 <div class="page" *ngIf="member">
-    <div class="card">
-        <div class="img">
-            <img src="{{member.photoUrl}}" alt="{{member.knownAs}}">
-        </div>
-        <div class="card-body">
-            <div class="field">
-                <h1>Location:</h1>
-                <p>{{member.city}}</p>
-                <p>{{member.country}}</p>
-            </div>
-            <div class="field">
-                <h1>Age:</h1>
-                <p>{{member.age}}</p>
-            </div>
-            <div class="field">
-                <h1>Member since:</h1>
-                <p>{{member.created}}</p>
-            </div>
-            <div class="field">
-                <h1>Last active:</h1>
-                <p>{{member.lastActive}}</p>
-            </div>
-        </div>
-        <div class="btn-group">
-            <button class="follow"><i class="fa fa-heart"></i></button>
-            <button class="message"><i class="fa fa-envelope"></i></button>
-        </div>
+    <div class="header">
+    <div class="img">
+        <img src="{{member.photoUrl}}" alt="{{member.knownAs}}">
     </div>
-
-    <div class="info-card">
-        <div class="tab">
-            <h3>Introduction</h3>
-            <p>{{member.introduction}}</p>
-        </div>
-        <div class="tab">
-            <h3>Interests</h3>
-            <p>{{member.interests}}</p>
-        </div>
-        <div class="tab">
-            <h3>Album</h3>
-            <app-member-photo [member]="member"></app-member-photo>
-        </div>
+    <div class="field">
+        <h3>{{member.knownAs}}</h3>
+        <p>{{member.city}}, {{member.country}}</p>
     </div>
-
-</div>
+    </div>
+     
+    <div class="card-page">
+        <div class="card">
+            <div class="card-body">
+    
+                <div class="field">
+                    <h1>Age:</h1>
+                    <p>{{member.age}}</p>
+                </div>
+                <div class="field">
+                    <h1>Member since:</h1>
+                    <p>{{member.created}}</p>
+                </div>
+                <div class="field">
+                    <h1>Last active:</h1>
+                    <p>{{member.lastActive}}</p>
+                </div>
+            </div>
+            <div class="btn-group">
+                <button class="follow"><i class="fa fa-heart"></i></button>
+                <button class="message"><i class="fa fa-envelope"></i></button>
+            </div>
+        </div>
+    
+            <tabs >
+            <tab tabTitle="Introduction" routerLinkActive="active">
+                
+                <p>{{member.introduction}}</p>
+                
+            </tab>
+            
+            <tab tabTitle="Interests" routerLinkActive="active">
+                <div class="tab">
+                    <p>{{member.interests}}</p>
+                </div>
+            </tab>
+            <tab tabTitle="Photo" routerLinkActive="active">
+                <div class="tab">
+                    <app-member-photo [member]="member"></app-member-photo>
+                </div>
+            </tab>
+            
+    
+            </tabs>
+    
+    
+       </div>
+    
+    </div>
+    
