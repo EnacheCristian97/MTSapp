@@ -39,6 +39,3 @@ ul {
     box-shadow: 0px -5px 0 rgba(47, 146, 226, 0.842) inset;
   }
 
-  li.active{
-      border-bottom: 1px solid #fff;
-  }

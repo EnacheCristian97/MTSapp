@@ -5,7 +5,7 @@ import { Tab } from './tab.directive';
     selector: 'tabs',
     template: `
       <ul >
-        <li class="li" *ngFor="let tab of tabs" (click)="selectTab(tab)">
+        <li class="li" [ngClass]="{'active': tab.active}" *ngFor="let tab of tabs" (click)="selectTab(tab)">
           {{tab.tabTitle}}
         </li>
       </ul>
