@@ -17,7 +17,6 @@ padding: 40px;
     position: relative;
     justify-content: flex-start;
     align-items: center;
-    /* background: rgba(161, 161, 161, 0.1); */
     background: rgba(255, 255, 255, 0.418);
     border-radius: 10px 10px 0px 0px;
     backdrop-filter: blur(100px);
@@ -165,6 +164,4 @@ tabs{
     z-index: 1;
 }
 
-tab {
-    margin: 10px;
-}
+

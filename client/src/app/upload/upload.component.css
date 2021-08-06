@@ -1,0 +1,69 @@
+.upload{
+    display: flex;
+    justify-content: flex-start;
+    align-items:baseline;
+    background: rgba(255, 255, 255, 0.575);
+    border-radius: 10px 10px 0px 0px;
+    backdrop-filter: blur(100px);
+    box-shadow: 0px  5px 10px rgba(0,0,0, 0.4);
+    border: 1px solid rgba(225,225,225, 0.3);
+    border-right: 1px solid rgba(225,225,225, 0.2);
+    border-bottom: 1px solid rgba(225,225,225, 0.2);
+    margin-top: 10px;
+    border-radius: 10px;
+    padding: 8px;
+}
+
+.upload-drag{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.drop-zone{
+    width:100px;
+    height: 100px;
+    border: 2px dotted #fff;
+}
+
+.drop-zone .select-file{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.select-btn{
+    display: block;
+    text-align: center;
+}
+
+.select-btn label{
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.select-btn input{
+   display: block;
+   color: #000;
+}
+
+.select-btn input#file-upload-button{
+    width: 50px;
+    background: #fff;
+}
+
+.upload-queue{
+    width: 100%;
+}
+
+.upload-queue .table{
+    display: block;
+    margin: 8px;
+}
+
+ th{
+    margin: 10px;
+}

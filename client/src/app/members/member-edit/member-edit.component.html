@@ -1,57 +1,71 @@
 <div class="page" *ngIf="member">
-    <div class="card">
+    <div class="header">
         <div class="img">
             <img src="{{member.photoUrl}}" alt="{{member.knownAs}}">
         </div>
-        <div class="card-body">
             <div class="field">
-                <h1>Location:</h1>
                 <p>{{member.city}}, {{member.country}}</p>
             </div>
-            <div class="field">
-                <h1>Age:</h1>
-                <p>{{member.age}}</p>
-            </div>
-            <div class="field">
-                <h1>Member since:</h1>
-                <p>{{member.created}}</p>
-            </div>
-            <div class="field">
-                <h1>Last active:</h1>
-                <p>{{member.lastActive}}</p>
-            </div>
-        </div>
-        <div class="btn-group">
-            <button [disabled]="!editForm.dirty" form="editForm" type="submit" class="save">Save</button>
-        </div>
+            <button class="open" (click)="onOpen()">+</button>
     </div>
-<div class="page-info">
-    <form #editForm="ngForm" id="editForm" (ngSubmit)="updateMember()">
-        <div class="info-card">
-            <h1>Your profile:</h1>
-            <div class="tab">
-                <h3>Introduction</h3>
-                <textarea [(ngModel)]="member.introduction" name="introduction" rows="10"></textarea>
-            </div>
-            <div class="tab">
-                <h3>Interests</h3>
-                <textarea [(ngModel)]="member.interests" name="interests" rows="10"></textarea>
-            </div>
-            <div class="tab">
-                <h3>Location Details</h3>
-                <label for="city">City</label>
-                <input [(ngModel)]="member.city" type="text" name="city" class="inputForm">
-                <label for="country">Country</label>
-                <input [(ngModel)]="member.country" type="text" name="country" class="inputForm">
-            </div>
-        </div>    
-    </form>
+    <app-upload class="upload" *ngIf="isOpen != false"></app-upload>
 
-    <div class="albume">
-        <h1>Photos</h1>
-        <div class="tab-albume">
-            <app-photo-editor [member]= "member"></app-photo-editor>
+    <div class="card-page">
+
+        <div class="card">
+            
+            <div class="card-body">
+                <div class="field">
+                    <h1>Age:</h1>
+                    <p>{{member.age}}</p>
+                </div>
+                <div class="field">
+                    <h1>Member since:</h1>
+                    <p>{{member.created}}</p>
+                </div>
+                <div class="field">
+                    <h1>Last active:</h1>
+                    <p>{{member.lastActive}}</p>
+                </div>
+            </div>
+            <div class="btn-group">
+                <button [disabled]="!editForm.dirty" form="editForm" type="submit" class="save">Save</button>
+            </div>
         </div>
+        
+        <tabs>
+            <tab tabTitle="Info">
+                    <form #editForm="ngForm" id="editForm" (ngSubmit)="updateMember()">
+                        <div class="info-card">
+                            <div class="tab">
+                                <h3>Introduction</h3>
+                                <textarea [(ngModel)]="member.introduction" name="introduction" rows="10"></textarea>
+                            </div>
+                            <div class="tab">
+                                <h3>Interests</h3>
+                                <textarea [(ngModel)]="member.interests" name="interests" rows="10"></textarea>
+                            </div>
+                            <div class="tab">
+                                <h3>Location Details</h3>
+                                <label for="city">City</label>
+                                <input [(ngModel)]="member.city" type="text" name="city" class="inputForm">
+                                <label for="country">Country</label>
+                                <input [(ngModel)]="member.country" type="text" name="country" class="inputForm">
+                            </div>
+                        </div>    
+                    </form>
+            </tab>
+            
+            <tab tabTitle="Photos">
+                <div class="albume">
+                    <div class="tab-albume">
+                        <app-photo-editor [member]= "member"></app-photo-editor>
+                    </div>
+                </div>
+            </tab>
+        </tabs>
+        
     </div>
-</div>
+
+
 </div>

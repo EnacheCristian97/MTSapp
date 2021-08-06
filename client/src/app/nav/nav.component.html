@@ -1,6 +1,6 @@
 <header class="main-header">
     <div>
-        <img src="../../assets/MT.png" alt="" class="brand-img">
+        <img src="../../assets/MT.png" alt="" class="brand-img" routerLink='/home'>
     </div>
     <div class="links">
         <div class="home-link" *ngIf="accountService.currentUser$| async">
@@ -8,7 +8,6 @@
         </div>
         <div class="home-link" *ngIf="accountService.currentUser$| async">
             <a routerLink='/members' routerLinkActive="active" >Members</a>
-            <button (click)="logout()">Logout</button>
         </div>
     </div>
     <nav class="main-nav">

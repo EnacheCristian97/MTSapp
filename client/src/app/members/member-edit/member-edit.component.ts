@@ -1,4 +1,4 @@
-import { Component, HostListener, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { Component, HostListener, Input, OnInit, Output, Renderer2, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Toast, ToastrService } from 'ngx-toastr';
 import { take } from 'rxjs/operators';
@@ -17,6 +17,7 @@ export class MemberEditComponent implements OnInit {
   @ViewChild('editForm') editForm: NgForm;
   member: Member;
   user: User;
+  isOpen = false;
   @HostListener('window:beforeunload', ['$event']) unloadNotification($event: any) {
     if(this.editForm.dirty)
     {
@@ -26,7 +27,8 @@ export class MemberEditComponent implements OnInit {
 
   constructor(private accoutService: AccountService,
               private memberService: MembersService, 
-              private toastr: ToastrService) 
+              private toastr: ToastrService,
+              private renderer: Renderer2) 
   { 
     this.accoutService.currentUser$.pipe(take(1)).subscribe(user => this.user = user);
   }
@@ -48,6 +50,10 @@ export class MemberEditComponent implements OnInit {
       this.editForm.reset(this.member);
     } )
 
+  }
+
+  onOpen() {
+    this.isOpen = true;
   }
 
 }

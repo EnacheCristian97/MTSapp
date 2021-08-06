@@ -30,6 +30,7 @@ import { PhotoEditorComponent } from './members/photo-editor/photo-editor.compon
 import { FileUploadModule } from 'ng2-file-upload';
 import { Tab } from './shared/tab.directive';
 import { Tabs } from './shared/tabs.directive';
+import { UploadComponent } from './upload/upload.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { Tabs } from './shared/tabs.directive';
     MemberEditComponent,
     PhotoEditorComponent,
     Tabs,
-    Tab
+    Tab,
+    UploadComponent
   ],
   imports: [
     BrowserModule,
