@@ -53,7 +53,20 @@ export class MemberEditComponent implements OnInit {
   }
 
   onOpen() {
-    this.isOpen = true;
+    let part = document.querySelector('.open');
+    if(!this.isOpen)
+    {
+      this.isOpen = true;
+      this.renderer.addClass(part,'active');
+    }
+    else
+    {
+        this.isOpen = false;
+        this.renderer.removeClass(part,'active');
+    }
+    }
+
   }
 
-}
+
+

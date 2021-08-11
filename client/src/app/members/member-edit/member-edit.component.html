@@ -4,7 +4,8 @@
             <img src="{{member.photoUrl}}" alt="{{member.knownAs}}">
         </div>
             <div class="field">
-                <p>{{member.city}}, {{member.country}}</p>
+                <h3>{{member.city}}</h3>
+                <p>{{member.country}}</p>
             </div>
             <button class="open" (click)="onOpen()">+</button>
     </div>
@@ -15,21 +16,23 @@
         <div class="card">
             
             <div class="card-body">
-                <div class="field">
-                    <h1>Age:</h1>
-                    <p>{{member.age}}</p>
+                <div class="field-detail">
+                    <h1><i class="fa fa-birthday-cake"></i></h1>
+                    <p>{{member.age}} Age</p>
                 </div>
-                <div class="field">
-                    <h1>Member since:</h1>
-                    <p>{{member.created}}</p>
+                <div class="field-detail">
+                    <h1><i class="fa fa-calendar"></i></h1>
+                    <p>Member since: {{member.created}}</p>
                 </div>
-                <div class="field">
-                    <h1>Last active:</h1>
-                    <p>{{member.lastActive}}</p>
+                <div class="field-detail">
+                    <h1><i class="fa fa-hourglass-half "></i></h1>
+                    <p>Last Active: {{member.lastActive}}</p>
                 </div>
             </div>
             <div class="btn-group">
-                <button [disabled]="!editForm.dirty" form="editForm" type="submit" class="save">Save</button>
+                <button [disabled]="!editForm.dirty" form="editForm" type="submit" class="save">
+                    <i class="fa fa-floppy-o"></i>
+                </button>
             </div>
         </div>
         

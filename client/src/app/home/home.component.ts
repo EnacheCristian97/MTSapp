@@ -6,6 +6,7 @@ import { Component, OnInit, Renderer2 } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  isOpen = false;
 
   constructor(private renderer: Renderer2) { }
 
@@ -13,8 +14,17 @@ export class HomeComponent implements OnInit {
   }
 
   onOpen() {
-    let part = document.querySelector('.upload');
-    this.renderer.addClass(part, 'active');
-  }
+    let part = document.querySelector('.open');
+    if(!this.isOpen)
+    {
+      this.isOpen = true;
+      this.renderer.addClass(part,'active');
+    }
+    else
+    {
+        this.isOpen = false;
+        this.renderer.removeClass(part,'active');
+    }
+    }
 
 }

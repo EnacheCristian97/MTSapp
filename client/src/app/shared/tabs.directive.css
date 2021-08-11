@@ -36,6 +36,6 @@ ul {
 
   ul li.active,
   ul li:hover{
-    box-shadow: 0px -5px 0 rgba(47, 146, 226, 0.842) inset;
+    box-shadow: 0px -5px 0 rgba(255, 255, 255, 0.842) inset;
   }
 

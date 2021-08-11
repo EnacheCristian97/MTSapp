@@ -11,7 +11,8 @@ body{
     align-items: center;
     padding: 0px 115px 0 115px;
     width: 100%;
-    flex-wrap: wrap;    
+    flex-wrap: wrap;
+    background: transparent;
 }
 
 .container 

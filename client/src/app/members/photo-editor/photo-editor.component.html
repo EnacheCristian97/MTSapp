@@ -2,8 +2,18 @@
     <div class="imgBox" *ngFor="let photo of member.photos">
         <img src="{{photo.url}}" alt="{{photo.url}}" class="imgBox">
         <div class="buttons">
-            <button class="set-main">Set Main</button>
-            <button class="trash"><i class="fa fa-trash"></i></button>
+            <button 
+            class="set-main" 
+            [disabled]="photo.isMain"
+            (click)="setMainPhoto(photo)"
+            [ngClass]='photo.isMain ? "set-main active" : "set-main"'
+            >Set Main</button>
+
+            <button 
+            class="trash"
+            [disabled]="photo.isMain"
+            (click)="deletePhoto(photo.id)"
+            ><i class="fa fa-trash"></i></button>
         </div>
     </div>
 </div>

@@ -1,6 +1,8 @@
 .upload{
-    display: flex;
+    display: block;
     justify-content: flex-start;
+    width: 800px;
+    height: auto;
     align-items:baseline;
     background: rgba(255, 255, 255, 0.575);
     border-radius: 10px 10px 0px 0px;
@@ -21,9 +23,14 @@
     flex-direction: column;
 }
 .drop-zone{
-    width:100px;
-    height: 100px;
-    border: 2px dotted #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width:100%;
+    height: 180px;
+    border: 4px dotted #fff;
+    margin-bottom: 5px;
 }
 
 .drop-zone .select-file{
@@ -32,30 +39,53 @@
     align-items: center;
 }
 
+.nv-file-over{
+    border: 3px dotted red;
+}
+
+.middle-drop i {
+font-size: 50px;
+}
+
 .select-btn{
     display: block;
     text-align: center;
 }
 
-.select-btn label{
-    width: 100%;
-    text-align: center;
-    color: #fff;
-    font-size: 18px;
-    font-weight: 600;
+.inputfile {
+    width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
 }
 
-.select-btn input{
-   display: block;
-   color: #000;
+.inputfile + label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 50px;
+    font-size: 1.25em;
+    font-weight: 700;
+    color: white;
+    background-color: rgba(253, 0, 0, 0.623);
+    border-radius: 10px;
+
 }
 
-.select-btn input#file-upload-button{
-    width: 50px;
-    background: #fff;
+.inputfile + label:hover{
+    background-color: rgba(255, 0, 0, 0.89);
+}
+
+.inputfile + label:active{
+    transform: scale(0.9);
 }
 
 .upload-queue{
+    display: block;
+    text-align: center;
     width: 100%;
 }
 
@@ -63,7 +93,55 @@
     display: block;
     margin: 8px;
 }
+.imgPre{
+    width: 120px;
+    height: 140px;
+    border: 4px solid rgba(161, 161, 161, 0.1);
+    box-shadow: 0  5px  10px rgba(0, 0, 0, 0.281);
+}
 
- th{
-    margin: 10px;
+.imgPre img{
+    width: 100px;
+    height: 120px;
+    object-fit: cover;
+
+}
+
+.tbody{
+    display: flex;
+    justify-content: center;
+    margin-right: 3px;
+}
+
+button{
+    width: 80px;
+    height: 40px;
+    padding: 2px;
+    font-size: 15px;
+    font-weight: 600;
+    border-style: none;
+    outline: none;
+    border-radius: 10px;
+    margin: 4px;
+    color: #fff;
+}
+
+button:disabled{
+    background: rgba(85, 85, 85, 0.418);
+}
+
+button:active{
+    transform: scale(0.9);
+}
+
+.btn-success{
+    background: rgba(0, 139, 0, 0.602);
+}
+
+.btn-warning{
+    background: rgba(194, 194, 0, 0.712);
+}
+
+.btn-danger{
+    background: rgb(204, 2, 2);
 }

@@ -77,6 +77,7 @@ padding: 40px;
     color: #fff;
     font-size: 60px;
     font-weight: 600;
+    transition: 300ms linear all;
 }
 
 .open:hover{
@@ -88,11 +89,17 @@ padding: 40px;
     transform: scale(0.9);
 }
 
+.open.active{
+    transition: 300ms linear all;
+    background: rgb(149, 1, 1);
+    transform: rotate(45deg);
+}
+
 .upload{
     position: absolute;
     margin: 0;
     left: 50%;
-    transform: translate(150%, 50%);
+    transform: translate(70%, -20%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -132,13 +139,24 @@ padding: 40px;
     padding: 20px;
 }
 
-.card-body .field
-{
-    display: block;
-    width: 100%;
-    height: 100px;
+.card-body .field-detail{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
     border-bottom: 2px solid rgba(231, 228, 228, 0.287);
+    width: 100%;
+    height: 50px;
+    margin-top: 10px;
     padding: 5px;
+}
+
+.card-body .field-detail i{
+    font-size: 30px;
+    margin-right: 5px;
+}
+
+.card-body .field-detail p{
+    font-size: 20px;
 }
 
 .btn-group
@@ -150,37 +168,52 @@ padding: 40px;
 
 .btn-group button
 {
-    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 10px;
+    width: 200px;
     height: 50px;
     border-style: none;
+    border-radius: 5px;
     outline: none;
 }
 
 .btn-group button.save
 {
     font-size: 18px;
-    font-weight: 600;
+    font-weight: 500;
     text-align: center;
-    text-transform: uppercase;
-    color: rgb(15, 15, 15);
-    background: rgba(255, 255, 255, 0.678);
+    text-transform: capitalize;
+    color: #fff;
+    background: rgba(3, 156, 49, 0.678);
     border-right:1px solid rgba(246, 244, 244, 0.349);
 }
 
 .btn-group button.save:disabled
 {
     font-size: 18px;
-    font-weight: 600;
+    font-weight: 500;
     text-align: center;
-    text-transform: uppercase;
+    text-transform: capitalize;
     color: #555;
     background: rgba(0, 0, 0, 0.466);
     border-right:1px solid rgba(246, 244, 244, 0.349);
 }
 
-.btn-group button.save:hover
+.btn-group button.save i{
+    font-size: 30px;
+    margin-right: 4px;
+}
+
+.btn-group button.save:hover{
+    background: rgba(3, 156, 49, 0.678);
+}
+
+.btn-group button.save:hover i
 {
-    color: rgba(255, 2, 2, 0.698);
+    color: #fff;
 }
 
 form{

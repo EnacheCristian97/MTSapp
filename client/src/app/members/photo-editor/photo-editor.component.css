@@ -58,6 +58,14 @@
     background: rgba(220, 133, 20, 0.534);
 }
 
+.buttons .set-main:disabled{
+    background-color: #555;
+}
+
+.buttons .set-main.active{
+    background-color: coral;
+}
+
 .buttons .trash{
     width: 20%;
 }

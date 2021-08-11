@@ -1,11 +1,12 @@
 .upload{
+    position: absolute;
+    margin: 0;
+    left: 50%;
+    transform: translate(70%, 50%);
     display: flex;
-    margin: 0 auto;
     justify-content: center;
     align-items: center;
-    height: 100%;
-    width: 100%;
-    visibility: hidden;
+    z-index: 100;
 }
 
 .upload.active{
@@ -29,6 +30,7 @@
     color: #fff;
     font-size: 60px;
     font-weight: 600;
+    transition: 300ms linear all;
 }
 
 .open:hover{
@@ -40,6 +42,11 @@
     transform: scale(0.9);
 }
 
+.open.active{
+    transition: 300ms linear all;
+    background: rgb(149, 1, 1);
+    transform: rotate(45deg);
+}
 .upload a {
     font-size: 60px;
     text-decoration: none;

@@ -13,7 +13,7 @@
     <nav class="main-nav">
         <div class="action" *ngIf="accountService.currentUser$| async">
             <div class="profile" appDropdown>
-                <img src="../../assets/iconUser.png" alt="">
+                <img src="{{user.photoUrl}}" alt="">
             </div>
             <div class="menu" >
                 <h3>{{user.username}}</h3>

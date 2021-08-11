@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 import { FileUploader } from 'ng2-file-upload';
 import { take } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
@@ -13,12 +14,13 @@ import { AccountService } from '../_services/account.service';
 })
 export class UploadComponent implements OnInit {
   @Input() member: Member;
+  imageSrc: string;
   uploader: FileUploader;
   hasBaseDropzoneOver = false;
   baseUrl = environment.apiUrl;
   user: User;
 
-  constructor(private accountService: AccountService) { 
+  constructor(private accountService: AccountService, public sanitizer:DomSanitizer) { 
     this.accountService.currentUser$.pipe(take(1)).subscribe(user => this.user = user);
   }
 
@@ -43,6 +45,8 @@ export class UploadComponent implements OnInit {
 
     this.uploader.onAfterAddingFile = (file) => {
       file.withCredentials = false;
+      let url = (window.URL) ? window.URL.createObjectURL(file._file) : (window as any).webkitURL.createObjectURL(file._file);
+      this.imageSrc = url;
     }
 
     this.uploader.onSuccessItem = (item, response, status, headers) => {
