@@ -3,16 +3,12 @@ body{
 }
 
 .container{
-    position:absolute;
     width: 500px;
     height: 500px;
     display: flex;
     justify-content: center;
     flex-direction: column;
     text-align: center;
-    left: 50%;
-    right: 50%;
-    transform: translate(-50%, 50%);
 }
 
 .container h4 {

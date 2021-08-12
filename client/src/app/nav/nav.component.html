@@ -11,7 +11,7 @@
         </div>
     </div>
     <nav class="main-nav">
-        <div class="action" *ngIf="accountService.currentUser$| async">
+        <div class="action" *ngIf="accountService.currentUser$ | async">
             <div class="profile" appDropdown>
                 <img src="{{user.photoUrl}}" alt="">
             </div>

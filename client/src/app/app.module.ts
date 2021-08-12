@@ -6,12 +6,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { LoginComponent } from './login/login.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { MemberDetailComponent } from './members/member-detail/member-detail.component';
 import { MessagesComponent } from './messages/messages.component';
-import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './_modules/shared.module';
 import { TestErrorsComponent } from './errors/test-errors/test-errors.component';
@@ -31,6 +30,7 @@ import { FileUploadModule } from 'ng2-file-upload';
 import { Tab } from './shared/tab.directive';
 import { Tabs } from './shared/tabs.directive';
 import { UploadComponent } from './upload/upload.component';
+import { TextInputsComponent } from './_forms/text-inputs/text-inputs.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +52,8 @@ import { UploadComponent } from './upload/upload.component';
     PhotoEditorComponent,
     Tabs,
     Tab,
-    UploadComponent
+    UploadComponent,
+    TextInputsComponent
   ],
   imports: [
     BrowserModule,
@@ -60,6 +61,7 @@ import { UploadComponent } from './upload/upload.component';
     BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     SharedModule,
     NgxSpinnerModule,
     FileUploadModule

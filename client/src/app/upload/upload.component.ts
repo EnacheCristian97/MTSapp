@@ -4,8 +4,10 @@ import { FileUploader } from 'ng2-file-upload';
 import { take } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { Member } from '../_models/member';
+import { Photo } from '../_models/photo';
 import { User } from '../_models/user';
 import { AccountService } from '../_services/account.service';
+import { MembersService } from '../_services/members.service';
 
 @Component({
   selector: 'app-upload',
@@ -19,14 +21,25 @@ export class UploadComponent implements OnInit {
   hasBaseDropzoneOver = false;
   baseUrl = environment.apiUrl;
   user: User;
+  isOpen = true;
 
-  constructor(private accountService: AccountService, public sanitizer:DomSanitizer) { 
+  constructor(private accountService: AccountService, public sanitizer:DomSanitizer, 
+    private memberService: MembersService) { 
     this.accountService.currentUser$.pipe(take(1)).subscribe(user => this.user = user);
   }
 
   ngOnInit(): void {
     this.initializeUploader();
+    this.loadMember();
   }
+
+  loadMember()
+  {
+    this.memberService.getMember(this.user.username).subscribe(member => {
+      this.member = member;
+    })
+  }
+
 
   fileOverBase(event: any) {
     this.hasBaseDropzoneOver = event;
@@ -52,10 +65,19 @@ export class UploadComponent implements OnInit {
     this.uploader.onSuccessItem = (item, response, status, headers) => {
       if(response)
       {
-        const photo =JSON.parse(response);
+        const photo: Photo =JSON.parse(response);
         this.member.photos.push(photo);
+        if(photo.isMain)
+        {
+          this.user.photoUrl = photo.url;
+          this.member.photoUrl = photo.url;
+          this.accountService.setCurrentUser(this.user);
+        }
+        
       }
+      
     }
+    this.isOpen = false;
   }
 
 }

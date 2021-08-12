@@ -1,14 +1,10 @@
 .container{
-    position:absolute;
     width: 400px;
     height: 400px;
     display: flex;
     justify-content: center;
     flex-direction: column;
     text-align: center;
-    left: 50%;
-    right: 50%;
-    transform: translate(-50%, 50%);
 }
 
 .container p 

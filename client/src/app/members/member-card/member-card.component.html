@@ -1,7 +1,7 @@
     <div class="container" routerLink='/members/{{member.username}}'>
         <div class="card" >
             <div class="imgBox">
-                <img src="{{member.photoUrl}}" alt="">
+                <img src="{{member.photoUrl || '../../../../../assets/iconUser.png'}}" alt="">
             </div>
             <div class="content">
                 <div class="details">

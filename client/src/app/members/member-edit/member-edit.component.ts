@@ -1,7 +1,9 @@
 import { Component, HostListener, Input, OnInit, Output, Renderer2, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Toast, ToastrService } from 'ngx-toastr';
+import { Subscription } from 'rxjs';
 import { take } from 'rxjs/operators';
+import { UploadComponent } from 'src/app/upload/upload.component';
 import { Member } from 'src/app/_models/member';
 import { Photo } from 'src/app/_models/photo';
 import { User } from 'src/app/_models/user';
@@ -63,6 +65,7 @@ export class MemberEditComponent implements OnInit {
     {
         this.isOpen = false;
         this.renderer.removeClass(part,'active');
+        this.updateMember();
     }
     }
 
