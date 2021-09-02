@@ -1,7 +1,24 @@
 <body>
-    <div class="container" *ngFor="let member of members$ | async">
+    <div class="container" *ngFor="let member of members ">
         <app-member-card [member] = "member"></app-member-card>
     </div>
+
+
 </body>
+<div class="page" *ngIf="pagination">
+    <pagination 
+    [boundaryLinks]="true" 
+    [totalItems]="pagination.totalItems"
+    [itemsPerPage]="pagination.itemsPerPage"
+    [(ngModel)]="pagination.currentPage"
+    (pageChanged)="pageChanged($event)"
+    previousText="&lsaquo;" 
+    nextText="&rsaquo;" 
+    firstText="&laquo;"
+    lastText="&raquo;">
+    </pagination>
+</div>
+
+
 
 
