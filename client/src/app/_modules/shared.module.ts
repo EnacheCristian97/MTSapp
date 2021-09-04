@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ToastrModule } from 'ngx-toastr';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
+import { TimeagoModule } from 'ngx-timeago';
 
 
 
@@ -12,10 +13,12 @@ import { PaginationModule } from 'ngx-bootstrap/pagination';
     ToastrModule.forRoot({
       positionClass: 'toast-bottom-right'
     }) ,
-    PaginationModule.forRoot()
+    PaginationModule.forRoot(),
+    TimeagoModule.forRoot()
   ],
   exports: [
-    PaginationModule
+    PaginationModule,
+    TimeagoModule
     
   ]
 })

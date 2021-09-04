@@ -23,11 +23,20 @@
                 </div>
                 <div class="field-detail">
                     <h1><i class="fa fa-calendar"></i></h1>
-                    <p>Member since: {{member.created}}</p>
+                    <div class="format-line">
+                        <span>Member since:</span> 
+                        <p>
+                            {{member.created | date: 'dd MMM yyyy'}}
+                        </p>
+                    </div>
                 </div>
                 <div class="field-detail">
                     <h1><i class="fa fa-hourglass-half "></i></h1>
-                    <p>Last Active: {{member.lastActive}}</p>
+                    <div class="format-line">
+                        <span>Last Active:</span>
+                        <p>{{member.lastActive | timeago}}</p>
+                    </div>
+                    
                 </div>
             </div>
             <div class="btn-group">

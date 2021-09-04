@@ -17,12 +17,10 @@ export class DropdownDirective {
         {
           this.isOpen = !this.isOpen
           this.renderer.addClass(part, 'active');
-          console.log("else 1")
         }
         else
         {
           this.isOpen = false;
-          console.log('else 2')
           this.renderer.removeClass(part, 'active');
         }    
   }
