@@ -13,6 +13,6 @@ namespace API.Extensions
         {
             return int.Parse(user.FindFirst(ClaimTypes.NameIdentifier)?.Value);
         }
-        
+
     }
 }
