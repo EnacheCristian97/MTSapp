@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ToastrModule } from 'ngx-toastr';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { TimeagoModule } from 'ngx-timeago';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 
 
@@ -14,12 +15,13 @@ import { TimeagoModule } from 'ngx-timeago';
       positionClass: 'toast-bottom-right'
     }) ,
     PaginationModule.forRoot(),
-    TimeagoModule.forRoot()
+    TimeagoModule.forRoot(),
+    InfiniteScrollModule
   ],
   exports: [
     PaginationModule,
-    TimeagoModule
-    
+    TimeagoModule,
+    InfiniteScrollModule
   ]
 })
 export class SharedModule { }

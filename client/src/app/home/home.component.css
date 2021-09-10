@@ -1,3 +1,16 @@
+.page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.posts{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-wrap: wrap;
+}
 .upload{
     position: absolute;
     margin: 0;

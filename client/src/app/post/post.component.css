@@ -1,0 +1,102 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #000;
+}
+
+.container
+{
+    position: relative;
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    transition: 0.5s;
+}
+
+.container:hover{
+   transform: scale(1.05);
+}
+
+.container:active{
+    transform: scale(0.9);
+}
+.container .card
+{
+    position: relative;
+    width: 400px;
+    min-height: 450px;
+    max-height: 450px;
+    background: rgb(241, 239, 231);
+    margin: 10px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.container .card .imgBox
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.container .card .imgBox img{
+    width: 400px;
+    height: 350px;
+    object-fit: cover;
+}
+
+
+.container .card .imgBox .content
+{
+    display: block;
+}
+
+.details{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+
+}
+
+.details h2{
+    font-size: 20px;
+    color: #000;
+}
+
+.interaction-icon
+{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    bottom: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.interaction-icon li
+{
+    list-style: none;
+    margin: 4px;
+}
+
+.interaction-icon li a
+{
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0000006e;
+    border-radius: 50%;
+    font-size: 1.5em;
+    color: #fff;
+    text-decoration: none;
+    transition: 0.5s;
+}

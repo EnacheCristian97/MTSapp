@@ -1,8 +1,17 @@
+
 <div class="page">
-    <div class="posts">
-        <h1>Hello</h1>
-    </div>
-    
-    <button class="open" (click)="onOpen()">+</button>
-    <app-upload class="upload" *ngIf="isOpen != false"></app-upload>
+
+<div class="posts" *ngFor="let photo of photos">
+<div
+infiniteScroll
+[infiniteScrollDistance]="2"
+[infiniteScrollThrottle]="50"
+(scrolled)="loadPost()"
+>
+    <app-post [photo]= "photo"></app-post>
+</div>
+<ngx-spinner></ngx-spinner>
+</div>
+<button class="open" (click)="onOpen()">+</button>
+<app-upload class="upload" *ngIf="isOpen != false"></app-upload>
 </div>
