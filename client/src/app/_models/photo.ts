@@ -1,3 +1,4 @@
+import { Member } from "./member";
 import { User } from "./user";
 
 export interface Photo {
@@ -5,6 +6,6 @@ export interface Photo {
     url: string;
     isMain: boolean;
     title: string;
-    AppUserId: string;
-    AppUser: User;
+    appUserId: string;
+    appUser: Member;
 }

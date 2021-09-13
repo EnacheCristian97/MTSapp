@@ -15,3 +15,17 @@ infiniteScroll
 <button class="open" (click)="onOpen()">+</button>
 <app-upload class="upload" *ngIf="isOpen != false"></app-upload>
 </div>
+<div class="page" *ngIf="pagination">
+    <pagination 
+    [boundaryLinks]="true" 
+    [totalItems]="pagination.totalItems"
+    [itemsPerPage]="pagination.itemsPerPage"
+    [(ngModel)]="pagination.currentPage"
+    (pageChanged)="pageChanged($event)"
+    previousText="&lsaquo;" 
+    nextText="&rsaquo;" 
+    firstText="&laquo;"
+    lastText="&raquo;">
+    </pagination>
+</div>
+

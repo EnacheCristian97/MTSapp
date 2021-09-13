@@ -28,11 +28,11 @@ export class HomeComponent implements OnInit {
       this.accountService.currentUser$.pipe(take(1)).subscribe(user =>{
         this.userParams = new UserParams(user);
         this.photoParams = new PhotoParams(this.photo);
+
       })  
   }
   ngOnInit(): void {
     this.loadPost();
-
   }
 
   onOpen() {

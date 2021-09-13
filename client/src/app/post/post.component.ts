@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Photo } from '../_models/photo';
+import { User } from '../_models/user';
 
 @Component({
   selector: 'app-post',
@@ -8,6 +9,7 @@ import { Photo } from '../_models/photo';
 })
 export class PostComponent implements OnInit {
   @Input() photo : Photo;
+  @Input() user : User;
 
   constructor() { }
 
