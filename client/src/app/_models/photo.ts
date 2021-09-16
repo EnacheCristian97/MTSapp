@@ -8,4 +8,5 @@ export interface Photo {
     title: string;
     appUserId: string;
     appUser: Member;
+    created: string;
 }

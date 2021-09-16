@@ -13,6 +13,8 @@ namespace API.Helpers
 
         public int CurrentIdUser { get; set; }
 
+        public string OrderBy { get; set; }
+
     }
     
 }

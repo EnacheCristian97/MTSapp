@@ -32,6 +32,7 @@ import { Tabs } from './shared/tabs.directive';
 import { UploadComponent } from './upload/upload.component';
 import { TextInputsComponent } from './_forms/text-inputs/text-inputs.component';
 import { PostComponent } from './post/post.component';
+import { PostDetailComponent } from './post/post-detail/post-detail.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { PostComponent } from './post/post.component';
     Tab,
     UploadComponent,
     TextInputsComponent,
-    PostComponent
+    PostComponent,
+    PostDetailComponent
   ],
   imports: [
     BrowserModule,

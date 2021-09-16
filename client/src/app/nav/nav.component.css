@@ -8,7 +8,7 @@
 
 .main-header{
     display: flex;
-    position: relative;
+    position: fixed;
     justify-content: space-between;
     align-items: center;
     width: 100%;

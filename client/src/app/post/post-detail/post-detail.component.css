@@ -1,0 +1,108 @@
+*{
+box-sizing: border-box;
+margin: 0%;
+padding: 0%;
+}
+
+.page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100vh;
+
+}
+
+.container
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background: rgba(98, 98, 98, 0.856); 
+    margin-top: 2.6%;
+    padding: 0;
+    width: 100%;
+    height: 95%;
+}
+
+.image-view{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 80px;
+    width: 80%;
+    height: 100%;
+}
+
+.image-view img{
+    width: 100%;
+    height: 100%;
+    background: black;
+    object-fit:scale-down;
+}
+
+.detail{
+    display: block;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 20%;
+    background: rgba(19, 18, 18, 0.863);
+    height: 100%;
+}
+
+.detail .user-detail{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8px;
+    margin-left: 5px;
+}
+
+.detail .user-detail img{
+    width: 50px;
+    height: 50px;
+    object-fit:cover;
+    border-radius: 50%;
+    
+}
+
+.username{
+    width: 100%;
+    margin-left: 5px;
+}
+
+.username h1, p{
+    color: rgb(7, 7, 7);
+    font-size: 20px;
+}
+
+.username h2{
+    color: #333;
+    font-size: 12px;
+}
+
+.title{
+    margin-left: 10px;
+    margin-top: 4px;
+}
+
+.close-btn{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    position: absolute;
+    left: 1550px;
+    width: 50px;
+    height: 40px;
+    font-size: 30px;
+    margin-right: 10px;
+    font-weight: 800;
+    outline: none;
+    border: none;
+}
+
+.close-btn a{
+    color: rgb(7, 7, 7);
+}

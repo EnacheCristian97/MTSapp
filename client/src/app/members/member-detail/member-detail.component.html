@@ -1,76 +1,62 @@
 <div class="page" *ngIf="member">
     <div class="header">
+    <div class="cover">
+            <img src="../../../assets/bk.jpg" alt="">
     <div class="img">
         <img src="{{member.photoUrl || '../../../../../assets/iconUser.png'}}" alt="{{member.knownAs}}">
     </div>
-    <div class="field">
-        <h3>{{member.knownAs}}</h3>
-        <p>{{member.city}}, {{member.country}}</p>
-    </div>
-    <div class="social-icon">
-        <ul class="social-icon">
-            <li class="fb"><a href="" ><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-            <li class="tw"><a href="" ><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-            <li class="lk"><a href="" ><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-            <li class="in"><a href="" ><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-        </ul>
-    </div>
-    </div>
-     
-    <div class="card-page">
-        <div class="card">
-            <div class="card-body">
-    
-                <div class="field-detail">
-                    <h1><i class="fa fa-birthday-cake"></i></h1>
-                    <p>{{member.age}} Age</p>
-                </div>
-                <div class="field-detail">
-                    <h1><i class="fa fa-calendar"></i></h1>
-                    <div class="format-line">
-                        <span>Member since:</span> 
-                        <p>
-                            {{member.created | date: 'dd MMM yyyy'}}
-                        </p>
-                    </div>
 
-                </div>
-                <div class="field-detail">
-                    <h1><i class="fa fa-hourglass-half "></i></h1>
-                    <div class="format-line">
-                        <span>Last Active:</span>
-                        <p>{{member.lastActive | timeago}}</p>
-                    </div>
-                </div>
-            </div>
-            <div class="btn-group">
-                <button class="follow"><i class="fa fa-heart"></i></button>
-                <button class="message"><i class="fa fa-envelope"></i></button>
-            </div>
+    <div class="field">
+        <div class="detail-field">
+            <h3>{{member.knownAs}}</h3>
+            <p><i class="fa fa-map-marker"></i> {{member.city}}, {{member.country}}</p>
         </div>
-    
+    </div>
+
+    </div>
+</div>
+     
+    <div class="card-page"> 
             <tabs >
-            <tab tabTitle="Introduction" routerLinkActive="active">
-                
-                <p>{{member.introduction}}</p>
-                
-            </tab>
-            
-            <tab tabTitle="Interests" routerLinkActive="active">
-                <div class="tab">
+
+                <tab tabTitle="Photo" routerLinkActive="active">
+                    <div class="tab">
+                        <app-member-photo [member]="member"></app-member-photo>
+                    </div>
+                </tab>
+
+            <tab tabTitle="About" routerLinkActive="active">
+                <div class="summary">
+                    <h1>Summary</h1>
+                    <p>{{member.introduction}}</p>
+                </div>
+
+                <div class="interests">
+                    <h1>Interests</h1>
                     <p>{{member.interests}}</p>
                 </div>
-            </tab>
-            <tab tabTitle="Photo" routerLinkActive="active">
-                <div class="tab">
-                    <app-member-photo [member]="member"></app-member-photo>
+
+                <div class="social-icon">
+                    <ul class="social-icon">
+                        <li class="fb"><a href="" ><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li class="tw"><a href="" ><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                        <li class="lk"><a href="" ><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                        <li class="in"><a href="" ><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+
+                <div class="last-active">
+                    <h1>Last Active</h1>
+                    <p>{{member.lastActive | timeago}}</p>
+                    <h1>Member Since</h1>
+                    <p>{{member.created | date: 'dd MMM yyyy'}}</p>
                 </div>
             </tab>
             
-    
+            <tab tabTitle="Followers" routerLinkActive="active">
+            </tab>
+
             </tabs>
-    
-    
        </div>
     
     </div>

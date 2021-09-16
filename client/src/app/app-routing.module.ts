@@ -8,18 +8,20 @@ import { MemberDetailComponent } from './members/member-detail/member-detail.com
 import { MemberEditComponent } from './members/member-edit/member-edit.component';
 import { MemberListComponent } from './members/member-list/member-list.component';
 import { MessagesComponent } from './messages/messages.component';
+import { PostDetailComponent } from './post/post-detail/post-detail.component';
 import { UploadComponent } from './upload/upload.component';
 import { AuthGuard } from './_guards/auth.guard';
 import { PreventUnsavedChangesGuard } from './_guards/prevent-unsaved-changes.guard';
 
 const routes: Routes = [
-  {path: '', component: LoginComponent},
+  {path: '', component: HomeComponent},
   {
     path: '',
     runGuardsAndResolvers: 'always',
     canActivate: [AuthGuard],
     children: [
       {path: 'home', component: HomeComponent},
+      {path: 'photos/:title', component:PostDetailComponent},
       {path: 'members', component: MemberListComponent},
       {path: 'members/:username', component: MemberDetailComponent},
       {path: 'member/edit', component: MemberEditComponent, canDeactivate: [PreventUnsavedChangesGuard]},

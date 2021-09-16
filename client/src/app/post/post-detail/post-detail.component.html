@@ -1,0 +1,22 @@
+<div class="page" *ngIf="photo">
+    <div class="container">
+        <div class="image-view">
+            <img src="{{photo.url}}" alt="{{photo.title}}">
+        </div>
+        <div class="detail">
+            <div class="user-detail">
+                <img src="{{photo.appUser.photoUrl}}" alt="" routerLink='/members/{{photo.appUser.username}}'>
+                <div class="username">
+                    <h1>{{photo.appUser.username}}</h1>
+                    <h2>@{{photo.appUser.knownAs}}</h2>
+                </div>
+                <!-- <button class="close-btn" (click)="close()"><a>X</a></button> -->
+            </div>
+            <div class="title">
+                <p>{{photo.title}}</p>
+            </div>
+            <div class="comments">
+            </div>
+        </div>
+    </div>
+</div>

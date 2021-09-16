@@ -6,7 +6,7 @@
 }
 
 body {
-    background:url(./assets/bk.jpg);
+    background:url(./assets/colorful.png), rgb(17, 17, 17);
 }
 
 ::-webkit-scrollbar {

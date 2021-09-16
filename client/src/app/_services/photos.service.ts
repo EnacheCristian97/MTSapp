@@ -40,18 +40,18 @@ import { PhotoParams } from "../_models/photoParams";
 
     }
 
-    getPhoto(id: number)
+    getPhoto(title: string)
     {
       const photo = [...this.photoCache.values()]
        .reduce((arr, elem) => arr.concat(elem.result), [])
-       .find((photo: Photo)=> photo.id === id);
+       .find((photo: Photo)=> photo.title === title);
   
        if(photo)
        {
          return of(photo);
        }
   
-      return this.http.get<Photo>(this.baseUrl + 'photos/' + id)
+      return this.http.get<Photo>(this.baseUrl + 'photos/' + title)
     }
 
     private getPaginatedResult<T>(url, params) {
@@ -78,4 +78,8 @@ import { PhotoParams } from "../_models/photoParams";
           return params;
     
       }
+
+      // public addTitle(model: any){
+      //   this.http.post(this.baseUrl + 'users/add-photo/', model);
+      // }
   }

@@ -1,9 +1,9 @@
 <div class="container">
-    <div class="card" >
+    <div class="card" routerLink='/photos/{{photo.title}}' >
         <div class="user">
-            <img src="{{photo.appUser.photoUrl}}">
+            <img src="{{photo.appUser.photoUrl}}" routerLink='/members/{{photo.appUser.username}}'>
             <div class="name">
-                <h1>{{photo.appUser.username}}</h1>
+                <h1 routerLink='/members/{{photo.appUser.username}}'>{{photo.appUser.username}}</h1>
                 <h2>@{{photo.appUser.knownAs}}</h2>
             </div>
         </div>
@@ -17,9 +17,12 @@
                     <li class="tw"><a><i class="fa fa-comments" aria-hidden="true"></i></a></li>
                 </ul>
             </div>
-            <div class="details">
-                <h4>{{photo.title}}</h4>
-            </div>
+        </div>
+        <div class="details">
+            <h4>{{photo.title}}</h4>
+        </div>
+        <div class="date">
+            <p>{{photo.created | date}}</p>
         </div>
     </div>
 </div>

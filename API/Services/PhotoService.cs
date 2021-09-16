@@ -1,4 +1,5 @@
 using System.Threading.Tasks;
+using API.DTOs;
 using API.Helpers;
 using API.Interfaces;
 using CloudinaryDotNet;
@@ -34,8 +35,10 @@ namespace API.Services
                 var uploadParams = new ImageUploadParams
                 {
                     File = new FileDescription(file.FileName, stream),
-                    Transformation = new Transformation().Height(700).Width(500).Crop("fill").Gravity("face")
+                    Transformation = new Transformation().Height(1920).Width(1080).Crop("fill").Gravity("face")
                 };
+
+                
 
                 uploadResult = await _cloudinary.UploadAsync(uploadParams);
             }

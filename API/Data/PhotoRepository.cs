@@ -20,10 +20,10 @@ namespace API.Data
             _context = context;
         }
 
-        public async Task<PhotoDto> GetPhotoAsync(int id)
+        public async Task<PhotoDto> GetPhotoAsync(string title)
         {
             return await _context.Photos
-            .Where(x => x.Id == id)
+            .Where(p => p.Title == title)
             .ProjectTo<PhotoDto>(_mapper.ConfigurationProvider)
             .SingleOrDefaultAsync();     
         }
@@ -33,6 +33,12 @@ namespace API.Data
             var query = _context.Photos.AsQueryable();
 
             query = query.Where(p => p.AppUserId != photoParams.CurrentIdUser);
+
+            query = photoParams.OrderBy switch
+            {
+                "created" => query.OrderByDescending(p => p.Created),
+                _ => query.OrderByDescending(p => p.Created)
+            };
 
             return await PagedList<PhotoDto>.CreateAsync(query.ProjectTo<PhotoDto>(_mapper.ConfigurationProvider).AsNoTracking(),
             photoParams.PageNumber, photoParams.PageSize);

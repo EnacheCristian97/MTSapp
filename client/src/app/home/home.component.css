@@ -7,9 +7,10 @@
 
 .posts{
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
     flex-wrap: wrap;
+    margin-top: 3%;
 }
 .upload{
     position: absolute;
