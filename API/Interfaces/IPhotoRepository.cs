@@ -9,7 +9,7 @@ namespace API.Interfaces
     {
         void Update(Photo photo);
         Task<bool> SaveAllAsync();
-        Task<PhotoDto> GetPhotoAsync(string title);
+        Task<PhotoDto> GetPhotoAsync(string publicId);
         Task<PagedList<PhotoDto>> GetPhotosAsync(PhotoParams photoParams);
 
     }

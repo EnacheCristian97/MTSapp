@@ -40,7 +40,10 @@
 }
 
 .home-link a {
-    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
     letter-spacing: 2px;
     margin-left: 0px;
     height: 100%;
@@ -175,7 +178,7 @@
 
 .action .menu ul li img 
 {
-    max-width: 40px;
+    max-width: 23px;
     margin-right: 20px;
     opacity: 0.5;
     transition: 0.5s;
@@ -191,17 +194,17 @@
 {
     display: inline-block;
     text-decoration: none;
-    color: #555;
+    color: rgb(104, 102, 102);
     font-weight: 500;
     transition: 0.5s;
 }
 
 .action .menu ul li:hover a 
 {
-    color: #00e9fa;
+    color: #000000;
 }
 .login-link {
-    font-size: 20px;
+    font-size: 15px;
     text-transform: uppercase;;
     font-weight: 900;
     width: calc(100% - (20px));
@@ -211,9 +214,9 @@
 .login-link a {
     text-decoration: none;
     font-weight: 700;
-    color: #00e9fa;
+    color: #ffffff;
     background:transparent;
-    border: 2px solid #00e9fa;
+    border-bottom: 1px #fff solid;
     padding: 5px;
     border-radius: 5px;
 }

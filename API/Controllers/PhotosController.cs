@@ -19,10 +19,10 @@ namespace API.Controllers
         }
 
         [Authorize]
-        [HttpGet("{title}", Name = "GetPhoto")]
-        public async Task<ActionResult<PhotoDto>> GetPhoto(string title)
+        [HttpGet("{publicId}", Name = "GetPhoto")]
+        public async Task<ActionResult<PhotoDto>> GetPhoto(string publicId)
         {
-            return await _photoRepository.GetPhotoAsync(title);
+            return await _photoRepository.GetPhotoAsync(publicId);
         }
 
         [HttpGet]

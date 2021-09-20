@@ -1,5 +1,5 @@
 import { Component, OnInit, Renderer2 } from '@angular/core';
-import { take } from 'rxjs/operators';
+import { map, take } from 'rxjs/operators';
 import { Member } from '../_models/member';
 import { Pagination } from '../_models/pagination';
 import { Photo } from '../_models/photo';
@@ -8,6 +8,8 @@ import { UserParams } from '../_models/userParams';
 import { AccountService } from '../_services/account.service';
 import { MembersService } from '../_services/members.service';
 import { PhotoService } from '../_services/photos.service';
+import _ from 'lodash';
+
 
 @Component({
   selector: 'app-home',
@@ -16,12 +18,13 @@ import { PhotoService } from '../_services/photos.service';
 })
 export class HomeComponent implements OnInit {
   isOpen = false;
-  photos: Photo[];
+  photos : Photo[];
   pagination: Pagination;
   photoParams: PhotoParams 
   userParams: UserParams;
   photo: Photo;
   members: Member[];
+  page = 0;
 
   constructor(private renderer: Renderer2, private photoService: PhotoService,
      private accountService: AccountService, private memberService: MembersService) {  
@@ -32,7 +35,7 @@ export class HomeComponent implements OnInit {
       })  
   }
   ngOnInit(): void {
-    this.loadPost();
+    this.initialLoadPost();
     this.loadMembers();
   }
 
@@ -49,10 +52,16 @@ export class HomeComponent implements OnInit {
         this.renderer.removeClass(part,'active');
     }
     }
+    initialLoadPost(){
+      this.photoService.getPhotos(this.photoParams).subscribe(response => {
+        this.photos =response.result;
+        this.pagination = response.pagination;
+      })
+    }
 
     loadPost(){
       this.photoService.getPhotos(this.photoParams).subscribe(response => {
-        this.photos = response.result;
+        this.photos =_.concat(this.photos,response.result);
         this.pagination = response.pagination;
       })
     }
@@ -70,11 +79,14 @@ export class HomeComponent implements OnInit {
     })
   }
 
-  onScroll(event: any)
+  onScroll()
   {
     console.log("Scrolled");
-    if(this.pageChanged)
+    this.photoParams.pageNumber++;
     this.loadPost();
+ 
   }
+
+
 
 }

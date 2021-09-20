@@ -1,5 +1,5 @@
-    <div class="container" routerLink='/members/{{member.username}}'>
-        <div class="card" >
+    <div class="container" >
+        <div class="card" routerLink='/members/{{member.username}}'>
             <div class="imgBox">
                 <img src="{{member.photoUrl || '../../../../../assets/iconUser.png'}}" alt="">
             </div>
@@ -12,6 +12,7 @@
                     <h3>{{member.city}}</h3>
                     <h3>{{member.country}}</h3>
                 </div>
+
                 <div class="social-icon">
                     <ul class="social-icon">
                         <li class="fb"><a href="" ><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
@@ -21,6 +22,9 @@
                     </ul>
                 </div>
             </div>
+        </div>
+        <div class="follow">
+            <button class="follow-btn" (click)="addFollow(member)">Follow</button>
         </div>
     </div>
 

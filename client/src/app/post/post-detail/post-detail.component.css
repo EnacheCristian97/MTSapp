@@ -50,19 +50,20 @@ padding: 0%;
     width: 20%;
     background: rgba(19, 18, 18, 0.863);
     height: 100%;
+    
 }
 
 .detail .user-detail{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 8px;
-    margin-left: 5px;
+    margin-left: 20px;
+    margin-top: 30px;
 }
 
 .detail .user-detail img{
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     object-fit:cover;
     border-radius: 50%;
     
@@ -73,19 +74,27 @@ padding: 0%;
     margin-left: 5px;
 }
 
-.username h1, p{
-    color: rgb(7, 7, 7);
-    font-size: 20px;
+.username h1{
+    color: rgb(204, 204, 204);
+    font-size: 30px;
+    font-weight: 500;
+    text-transform: capitalize;
 }
 
 .username h2{
-    color: #333;
+    color: rgb(114, 114, 114);
     font-size: 12px;
+    text-transform: lowercase;
 }
 
 .title{
     margin-left: 10px;
-    margin-top: 4px;
+    margin-top: 10px;
+}
+
+.title p{
+    font-size: 20px;
+    color: rgb(204, 204, 204);
 }
 
 .close-btn{
@@ -93,7 +102,8 @@ padding: 0%;
     justify-content: center;
     align-content: center;
     position: absolute;
-    left: 1550px;
+    left: 0;
+    top: 70px;
     width: 50px;
     height: 40px;
     font-size: 30px;
@@ -101,8 +111,6 @@ padding: 0%;
     font-weight: 800;
     outline: none;
     border: none;
-}
-
-.close-btn a{
-    color: rgb(7, 7, 7);
+    color: white;
+    background: transparent;
 }

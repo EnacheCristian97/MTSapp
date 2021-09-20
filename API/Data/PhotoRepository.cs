@@ -20,10 +20,10 @@ namespace API.Data
             _context = context;
         }
 
-        public async Task<PhotoDto> GetPhotoAsync(string title)
+        public async Task<PhotoDto> GetPhotoAsync(string publicId)
         {
             return await _context.Photos
-            .Where(p => p.Title == title)
+            .Where(p => p.PublicId == publicId)
             .ProjectTo<PhotoDto>(_mapper.ConfigurationProvider)
             .SingleOrDefaultAsync();     
         }

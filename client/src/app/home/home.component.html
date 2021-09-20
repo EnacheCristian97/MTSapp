@@ -7,7 +7,15 @@
 <button class="open" (click)="onOpen()">+</button>
 <app-upload class="upload" *ngIf="isOpen != false"></app-upload>
 
-<div class="page" *ngIf="pagination">
+<div
+class="search-results"
+infiniteScroll
+[infiniteScrollDistance]="2"
+[infiniteScrollThrottle]="50"
+(scrolled)="onScroll()"
+></div>
+
+<!-- <div class="page" *ngIf="pagination">
     <pagination 
     [boundaryLinks]="true" 
     [totalItems]="pagination.totalItems"
@@ -19,5 +27,5 @@
     firstText="&laquo;"
     lastText="&raquo;">
     </pagination>
-</div>
+</div> -->
 

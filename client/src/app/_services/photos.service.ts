@@ -1,6 +1,6 @@
 import { HttpClient, HttpParams } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { of } from "rxjs";
+import { concat, of } from "rxjs";
 import { map } from "rxjs/operators";
 import { environment } from "src/environments/environment";
 import { PaginatedResult } from "../_models/pagination";
@@ -18,11 +18,12 @@ import { PhotoParams } from "../_models/photoParams";
     constructor(private http: HttpClient) {}
 
     getPhotos(photoParams: PhotoParams){
-        var response = this.photoCache.get(Object.values(photoParams).join('-'));
-        if (response)
+        var resp = this.photoCache.get(Object.values(photoParams).join('-'));
+        if (resp)
         {
-          return of(response);
+          return of(resp);
         }
+        
     
         let params = this.getPaginationHeaders(photoParams.pageNumber, photoParams.pageSize);
     
@@ -40,18 +41,18 @@ import { PhotoParams } from "../_models/photoParams";
 
     }
 
-    getPhoto(title: string)
+    getPhoto(publicId: string)
     {
       const photo = [...this.photoCache.values()]
        .reduce((arr, elem) => arr.concat(elem.result), [])
-       .find((photo: Photo)=> photo.title === title);
+       .find((photo: Photo)=> photo.publicId === publicId);
   
        if(photo)
        {
          return of(photo);
        }
   
-      return this.http.get<Photo>(this.baseUrl + 'photos/' + title)
+      return this.http.get<Photo>(this.baseUrl + 'photos/' + publicId)
     }
 
     private getPaginatedResult<T>(url, params) {

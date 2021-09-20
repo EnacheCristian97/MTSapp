@@ -9,4 +9,5 @@ export interface Photo {
     appUserId: string;
     appUser: Member;
     created: string;
+    publicId: string;
 }
