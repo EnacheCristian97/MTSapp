@@ -55,20 +55,7 @@
             
            
                <tab class="follow-tab" tabTitle="Follows" routerLinkActive="active" > 
-                   <div>
-                       <h2>{{predicate === 'following' ? 'Member i follow' : 'Members who follow me'}}</h2>
-                   </div>
-                   <div class="button" name="predicate" >
-                       <button  [(ngModel)]="predicate" ngDefaultControl (click)="loadFollows()">
-                           My Follow
-                       </button>
-                       <button [(ngModel)]="predicate" ngDefaultControl (click)="loadFollows()">
-                        My followers
-                    </button>
-                   </div>
-                <div class="container-member" *ngFor="let member of members ">
-                    <app-member-card [member]="member"></app-member-card>
-                </div>
+                  
             </tab>
             </tabs>
        </div>

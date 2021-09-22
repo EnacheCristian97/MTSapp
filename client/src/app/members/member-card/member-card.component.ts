@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, HostBinding, Input, OnInit, Renderer2 } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { Member } from 'src/app/_models/member';
 import { FollowService } from 'src/app/_services/follow.service';
@@ -11,7 +11,7 @@ import { FollowService } from 'src/app/_services/follow.service';
 export class MemberCardComponent implements OnInit {
   @Input() member: Member;
 
-  constructor(private followService: FollowService, private toastr : ToastrService) { }
+  constructor(private followService: FollowService, private toastr : ToastrService, private renderer : Renderer2) { }
 
   ngOnInit(): void {
   }
@@ -20,6 +20,7 @@ export class MemberCardComponent implements OnInit {
   {
     this.followService.addFollow(member.username).subscribe(() => {
       this.toastr.success('You have follow ' + member.knownAs);
+
     })
   }
 

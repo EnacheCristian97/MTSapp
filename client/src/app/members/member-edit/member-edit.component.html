@@ -1,84 +1,104 @@
+<!-- <app-upload class="upload" [isOpen]="isOpen" *ngIf="isOpen != false"></app-upload> -->
+
 <div class="page" *ngIf="member">
     <div class="header">
-        <div class="img">
-            <img src="{{member.photoUrl || '../../../../../assets/iconUser.png'}}" alt="{{member.knownAs}}">
-        </div>
-            <div class="field">
-                <h3>{{member.knownAs}}</h3>
-                <p>{{member.city}}</p>
-                <p>{{member.country}}</p>
-            </div>
-            <button class="open" (click)="onOpen()">+</button>
-    </div>
-    <app-upload class="upload" [isOpen]="isOpen" *ngIf="isOpen != false"></app-upload>
-
-    <div class="card-page">
-
-        <div class="card">
-            
-            <div class="card-body">
-                <div class="field-detail">
-                    <h1><i class="fa fa-birthday-cake"></i></h1>
-                    <p>{{member.age}} Age</p>
-                </div>
-                <div class="field-detail">
-                    <h1><i class="fa fa-calendar"></i></h1>
-                    <div class="format-line">
-                        <span>Member since:</span> 
-                        <p>
-                            {{member.created | date: 'dd MMM yyyy'}}
-                        </p>
-                    </div>
-                </div>
-                <div class="field-detail">
-                    <h1><i class="fa fa-hourglass-half "></i></h1>
-                    <div class="format-line">
-                        <span>Last Active:</span>
-                        <p>{{member.lastActive | timeago}}</p>
-                    </div>
-                    
-                </div>
-            </div>
-            <div class="btn-group">
-                <button [disabled]="!editForm.dirty" form="editForm" type="submit" class="save">
-                    <i class="fa fa-floppy-o"></i>
-                </button>
-            </div>
-        </div>
-        
-        <tabs>
-            <tab tabTitle="Info">
-                    <form #editForm="ngForm" id="editForm" (ngSubmit)="updateMember()">
-                        <div class="info-card">
-                            <div class="tab">
-                                <h3>Introduction</h3>
-                                <textarea [(ngModel)]="member.introduction" name="introduction" rows="10"></textarea>
-                            </div>
-                            <div class="tab">
-                                <h3>Interests</h3>
-                                <textarea [(ngModel)]="member.interests" name="interests" rows="10"></textarea>
-                            </div>
-                            <div class="tab">
-                                <h3>Location Details</h3>
-                                <label for="city">City</label>
-                                <input [(ngModel)]="member.city" type="text" name="city" class="inputForm">
-                                <label for="country">Country</label>
-                                <input [(ngModel)]="member.country" type="text" name="country" class="inputForm">
-                            </div>
-                        </div>    
-                    </form>
-            </tab>
-            
-            <tab tabTitle="Photos">
-                <div class="albume">
-                    <div class="tab-albume">
-                        <app-photo-editor [member]= "member"></app-photo-editor>
-                    </div>
-                </div>
-            </tab>
-        </tabs>
-        
+    <div class="cover">
+            <img src="../../../assets/bk.jpg" alt="">
+    <div class="img">
+        <img src="{{member.photoUrl || '../../../../../assets/iconUser.png'}}" alt="{{member.knownAs}}">
     </div>
 
+    <div class="field">
+        <div class="detail-field">
+            <h3>{{member.knownAs}}</h3>
+            <p><i class="fa fa-map-marker"></i> {{member.city}}, {{member.country}}</p>
+        </div>
+    </div>
 
+    <div class="btn-group">
+    <button [disabled]="!editForm.dirty" form="editForm" type="submit" class="save">
+        <i class="fa fa-floppy-o"></i>
+    </button>
+    </div>
+
+    </div>
 </div>
+     
+    <div class="card-page"> 
+            <tabs >
+
+                <tab tabTitle="Photo" routerLinkActive="active">
+                        <app-photo-editor [member]= "member"></app-photo-editor>
+                </tab>
+
+            <tab tabTitle="About" routerLinkActive="active">
+                <form #editForm="ngForm" id="editForm" (ngSubmit)="updateMember()">
+                    <div class="info-card">
+                        <div class="tab">
+                            <div class="summary">
+                                <h1>Summary</h1>
+                            <textarea [(ngModel)]="member.introduction" name="introduction" rows="10"></textarea>
+                        </div>
+                        </div>
+                        
+                        <div class="tab">                       
+                            <div class="interests">
+                               <h1>Interests</h1>
+                            <textarea [(ngModel)]="member.interests" name="interests" rows="10"></textarea>
+                        </div>
+                    </div>
+                        
+                        <div class="tab">
+                            <div class="location-detail">
+                                <div class="loc-det-form">
+                                    <h3>City</h3>
+                                    <input [(ngModel)]="member.city" type="text" name="city" class="inputForm">
+                                </div>
+                                <div class="loc-det-form">
+                                    <h3>Country</h3>
+                                    <input [(ngModel)]="member.country" type="text" name="country" class="inputForm">
+                                </div>
+                            </div>
+                        </div>
+                    </div>    
+                </form>
+
+                <div class="social-icon">
+                    <ul class="social-icon">
+                        <li class="fb"><a href="" ><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li class="tw"><a href="" ><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                        <li class="lk"><a href="" ><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                        <li class="in"><a href="" ><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+
+                <div class="last-active">
+                    <h1>Last Active</h1>
+                    <p>{{member.lastActive | timeago}}</p>
+                    <h1>Member Since</h1>
+                    <p>{{member.created | date: 'dd MMM yyyy'}}</p>
+                </div>
+            </tab> 
+            
+           
+               <tab class="follow-tab" tabTitle="Follows" routerLinkActive="active" >
+                   <div class="button">
+                       <button class="follow-btn" [(ngModel)]="predicate" ngDefaultControl (click)="loadFollowing()">
+                           My following
+                       </button>
+                       <button class="follow-btn"  [(ngModel)]="predicate" ngDefaultControl (click)="loadFollowers()">
+                        My followers
+                    </button>
+                   </div>
+                   <div class="member-cards">
+                <div class="container-member" *ngFor="let member of members ">
+                    <app-member-card [member]="member"></app-member-card>
+                </div>
+            </div>
+            </tab>
+            </tabs>
+       </div>
+    
+    </div>
+    
+

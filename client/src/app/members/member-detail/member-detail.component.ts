@@ -11,14 +11,12 @@ import { MembersService } from 'src/app/_services/members.service';
 })
 export class MemberDetailComponent implements OnInit {
   member:Member;
-  members: Partial<Member[]>;
-  predicate = 'following';
 
-  constructor(private memberService : MembersService, private route : ActivatedRoute, private followService : FollowService) { }
+
+  constructor(private memberService : MembersService, private route : ActivatedRoute) { }
 
   ngOnInit(): void {
     this.loadMember();
-    this.loadFollows();
   }
   
   loadMember() {
@@ -27,10 +25,6 @@ export class MemberDetailComponent implements OnInit {
     })
   }
 
-  loadFollows(){
-    this.followService.getFollows(this.predicate).subscribe(response =>{
-      this.members = response;
-    })
-  }
+
 
 }

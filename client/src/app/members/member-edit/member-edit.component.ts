@@ -8,6 +8,7 @@ import { Member } from 'src/app/_models/member';
 import { Photo } from 'src/app/_models/photo';
 import { User } from 'src/app/_models/user';
 import { AccountService } from 'src/app/_services/account.service';
+import { FollowService } from 'src/app/_services/follow.service';
 import { MembersService } from 'src/app/_services/members.service';
 
 @Component({
@@ -20,6 +21,9 @@ export class MemberEditComponent implements OnInit {
   member: Member;
   user: User;
   isOpen = false;
+  members: Partial<Member[]>;
+  predicate = 'following';
+  predicate1 = 'followers'
   @HostListener('window:beforeunload', ['$event']) unloadNotification($event: any) {
     if(this.editForm.dirty)
     {
@@ -30,19 +34,33 @@ export class MemberEditComponent implements OnInit {
   constructor(private accoutService: AccountService,
               private memberService: MembersService, 
               private toastr: ToastrService,
-              private renderer: Renderer2) 
+              private renderer: Renderer2,
+              private followService : FollowService) 
   { 
     this.accoutService.currentUser$.pipe(take(1)).subscribe(user => this.user = user);
   }
 
   ngOnInit(): void {
     this.loadMember();
+    this.loadFollowing();
   }
 
   loadMember()
   {
     this.memberService.getMember(this.user.username).subscribe(member => {
       this.member = member;
+    })
+  }
+
+  loadFollowing(){
+    this.followService.getFollows(this.predicate).subscribe(response =>{
+      this.members = response;
+    })
+  }
+
+  loadFollowers(){
+    this.followService.getFollows(this.predicate1).subscribe(response =>{
+      this.members = response;
     })
   }
 
@@ -53,21 +71,6 @@ export class MemberEditComponent implements OnInit {
     } )
 
   }
-
-  onOpen() {
-    let part = document.querySelector('.open');
-    if(!this.isOpen)
-    {
-      this.isOpen = true;
-      this.renderer.addClass(part,'active');
-    }
-    else
-    {
-        this.isOpen = false;
-        this.renderer.removeClass(part,'active');
-        this.updateMember();
-    }
-    }
 
   }
 

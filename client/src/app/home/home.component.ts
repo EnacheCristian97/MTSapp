@@ -17,14 +17,12 @@ import _ from 'lodash';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  isOpen = false;
   photos : Photo[];
   pagination: Pagination;
   photoParams: PhotoParams 
   userParams: UserParams;
   photo: Photo;
   members: Member[];
-  page = 0;
 
   constructor(private renderer: Renderer2, private photoService: PhotoService,
      private accountService: AccountService, private memberService: MembersService) {  
@@ -39,19 +37,7 @@ export class HomeComponent implements OnInit {
     this.loadMembers();
   }
 
-  onOpen() {
-    let part = document.querySelector('.open');
-    if(!this.isOpen)
-    {
-      this.isOpen = true;
-      this.renderer.addClass(part,'active');
-    }
-    else
-    {
-        this.isOpen = false;
-        this.renderer.removeClass(part,'active');
-    }
-    }
+ 
     initialLoadPost(){
       this.photoService.getPhotos(this.photoParams).subscribe(response => {
         this.photos =response.result;
@@ -65,12 +51,6 @@ export class HomeComponent implements OnInit {
         this.pagination = response.pagination;
       })
     }
-  
-    pageChanged(event: any) {
-      this.photoParams.pageNumber = event.page;
-      this.loadPost();
-    }
-
     
   loadMembers() {
     this.memberService.getMembers(this.userParams).subscribe(response =>{

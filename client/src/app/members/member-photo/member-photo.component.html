@@ -1,6 +1,6 @@
-<div class="content" *ngIf="member">
-    <div class="card" *ngFor="let photo of member.photos">
-        <div class="imgBox" routerLink='/photos/{{photo.title}}'>
+<div class="content" *ngIf="member" >
+    <div class="card" *ngFor="let photo of member.photos"  routerLink='/photos/{{photo.title}}'  >
+        <div class="imgBox" >
             <img src="{{photo.url}}" alt="">
         </div>
     </div>

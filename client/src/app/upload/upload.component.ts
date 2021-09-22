@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DomSanitizer } from '@angular/platform-browser';
 import { FileUploader } from 'ng2-file-upload';
 import { take } from 'rxjs/operators';
@@ -18,18 +19,21 @@ export class UploadComponent implements OnInit {
   @Input() member: Member;
   imageSrc: string;
   uploader: FileUploader;
+  titleGroup: FormGroup;
   hasBaseDropzoneOver = false;
   baseUrl = environment.apiUrl;
   user: User;
-  isOpen = true;
+  photo: Photo;
 
   constructor(private accountService: AccountService, public sanitizer:DomSanitizer, 
-    private memberService: MembersService) { 
+    private memberService: MembersService, private fb: FormBuilder) { 
     this.accountService.currentUser$.pipe(take(1)).subscribe(user => this.user = user);
   }
 
   ngOnInit(): void {
+    
     this.initializeUploader();
+    this.initalizeForm();
     this.loadMember();
   }
 
@@ -40,6 +44,11 @@ export class UploadComponent implements OnInit {
     })
   }
 
+  initalizeForm(){
+    this.titleGroup = this.fb.group({
+      title: ['', Validators.required]
+    })
+  }
 
   fileOverBase(event: any) {
     this.hasBaseDropzoneOver = event;
@@ -56,11 +65,17 @@ export class UploadComponent implements OnInit {
       maxFileSize: 10 * 1024 *1024
     });
 
+  
     this.uploader.onAfterAddingFile = (file) => {
       file.withCredentials = false;
       let url = (window.URL) ? window.URL.createObjectURL(file._file) : (window as any).webkitURL.createObjectURL(file._file);
       this.imageSrc = url;
     }
+
+    this.uploader.onBuildItemForm = (fileItem: any, form: any) => {
+      form.append('title', this.titleGroup.value);
+    }
+
 
     this.uploader.onSuccessItem = (item, response, status, headers) => {
       if(response)
@@ -77,7 +92,6 @@ export class UploadComponent implements OnInit {
       }
       
     }
-    this.isOpen = false;
   }
 
 }

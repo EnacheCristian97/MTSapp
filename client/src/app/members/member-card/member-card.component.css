@@ -8,7 +8,7 @@
 .container
 {
     position: relative;
-    width: 220px;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,9 +27,9 @@
 .container .card
 {
     position: relative;
-    width: 230px;
-    min-height: 300px;
-    max-height: 320px;
+    width: 220px;
+    min-height: 320px;
+    max-height: 340px;
     background: rgb(241, 239, 231);
     margin: 10px;
     border-radius: 20px;
@@ -99,6 +99,11 @@
     color: #1DA1F2;
     border-radius: 4px;
     border:1px solid #1DA1F2;
+}
+
+.follow-btn.active{
+    background-color: #1DA1F2;
+    color: #fff;
 }
 
 .social-icon

@@ -1,9 +1,25 @@
-<div class="upload">
+  <div class="upload">
+
+    <div class="photo-preview">
+        <div class="imgFrame">
+        <table class="table">
+            <tbody class="tbody">
+            <tr *ngFor="let item of uploader.queue" class="tr-info">
+                <td *ngIf="uploader.options.isHTML5">
+                        <img [src]="sanitizer.bypassSecurityTrustUrl(imageSrc)" class="imgPre">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    </div>
+<div class="form-div">
+    <form [formGroup]="titleGroup" class="form">
+        <textarea name="title" rows="3" formControlName='title'></textarea>
+    </form>
+</div>
  
     <div class="upload-drag">
-
-        <h3>Upload Zone</h3>
-
         <div ng2FileDrop
              [ngClass]="{'nv-file-over': hasBaseDropzoneOver}"
              (fileOver)="fileOverBase($event)"
@@ -13,33 +29,19 @@
                 <i class="fa fa-upload"></i>
                 <p>Drop photos here!</p>
              </div>
-
-        </div>
-        <div class="select-file">
-            <div class="select-btn">
-                <input type="file" ng2FileSelect [uploader]="uploader" multiple class="inputfile" id="file" />
-                <label for="file"><i class="fa fa-upload"></i>Choose a file</label>
+             <div class="select-file">
+                <div class="select-btn">
+                    <input type="file" ng2FileSelect [uploader]="uploader" multiple class="inputfile" id="file" />
+                    <label for="file"><i class="fa fa-upload"></i>Choose a file</label>
+                </div>
             </div>
-    </div>
-
-    </div>
+        </div>
 
     <div class="upload-queue">
 
-        <h3>Upload queue</h3>
-        <p>Queue length: {{ uploader?.queue?.length }}</p>
-
-        <table class="table">
-            <tbody class="tbody">
-            <tr *ngFor="let item of uploader.queue" class="tr-info">
-                <td *ngIf="uploader.options.isHTML5">
-                    <img [src]="sanitizer.bypassSecurityTrustUrl(imageSrc)" class="imgPre">
-                </td>
-            </tr>
-            </tbody>
-        </table>
-
-        <div>
+        <div class="upload-queue-order">
+            <h3>Upload queue</h3>
+            <p>Queue length: {{ uploader?.queue?.length }}</p>
             <div>
                 Queue progress:
                 <div class="progress">
@@ -62,4 +64,6 @@
 
     </div>
 
-</div>
+    </div>
+
+  </div>
