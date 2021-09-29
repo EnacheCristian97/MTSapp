@@ -34,6 +34,18 @@ export class PhotoEditorComponent implements OnInit {
     })
   }
 
+  setCoverPhoto(photo: Photo){
+    this.memberService.setCoverPhoto(photo.id).subscribe(() => {
+      this.user.photoCoverUrl = photo.url;
+      this.accountService.setCurrentUser(this.user);
+      this.member.photoCoverUrl = photo.url;
+      this.member.photos.forEach(p => {
+        if(p.isCover) p.isCover = false;
+        if (p.id === photo.id) p.isCover = true;
+      })
+    })
+  }
+
   deletePhoto(photoId: number){
     this.memberService.deletePhoto(photoId).subscribe(() => {
       this.member.photos = this.member.photos.filter(x => x.id !== photoId);

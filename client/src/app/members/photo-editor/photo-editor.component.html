@@ -1,38 +1,32 @@
-<!-- <div class="content">
-    <div class="imgBox" *ngFor="let photo of member.photos">
-        <img src="{{photo.url}}" alt="{{photo.url}}" class="imgBox">
-
-    </div>
-</div> -->
-
 <div class="content" *ngIf="member">
-    <div class="card" *ngFor="let photo of member.photos">
+    <div class="card" *ngFor="let photo of member.photos" >
         <div class="imgBox" routerLink='/photos/{{photo.publicId}}'>
             <img src="{{photo.url}}" alt="">
-                <div class="dropdown-img">
-                  <button class="dropdown-btn"><i class="fa fa-ellipsis-v"></i></button>
-                  <div class="buttons">
-                    <button 
-                    class="set-main" 
-                    [disabled]="photo.isMain"
-                    (click)="setMainPhoto(photo)"
-                    [ngClass]='photo.isMain ? "set-main active" : "set-main"'
-                    >Set Main</button>
-                    <button 
-                    class="set-main" 
-                    [disabled]="photo.isMain"
-                    >Set Cover</button>
-                
-                    <button 
-                    class="trash"
-                    [disabled]="photo.isMain"
-                    (click)="deletePhoto(photo.id)"
-                    ><i class="fa fa-trash"></i>
-                    </button>
-                </div> 
-                </div>
-
         </div>
+            <div class="dropdown-img">
+                <button class="dropdown-btn"><i class="fa fa-ellipsis-v"></i></button>
+                    <div class="buttons">
+                      <button 
+                      class="set-main" 
+                      [disabled]="photo.isMain"
+                      (click)="setMainPhoto(photo)"
+                      [ngClass]='photo.isMain ? "set-main active" : "set-main"'
+                      >Set Main</button>
+
+                      <button 
+                      class="set-cover" 
+                      (click)="setCoverPhoto(photo)"
+                      [ngClass]='photo.isCover ? "set-cover active" : "set-cover"'
+                      [disabled]="photo.isCover"
+                      >Set Cover</button>
+                  
+                      <button 
+                      class="trash"
+                      [disabled]="photo.isMain"
+                      (click)="deletePhoto(photo.id)"
+                      ><i class="fa fa-trash"></i></button>
+                    </div> 
+            </div>
     </div>
 
 </div>

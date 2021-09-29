@@ -14,7 +14,7 @@
 </div>
 
 <div class="interaction">
-    <div class="upload">
+    <div class="upload" *ngIf="accountService.currentUser$| async">
         <a routerLink="/upload"><img src="../../assets/cloud-computing.png" alt="">Upload</a>
     </div>
     <div class="action" *ngIf="(accountService.currentUser$ | async) as user">

@@ -1,7 +1,7 @@
 <div class="page" *ngIf="photo">
     <div class="container">
         <div class="image-view">
-            <img src="{{photo.url}}" alt="{{photo.title}}">
+            <img src="{{photo.url}}" alt="{{photo.photoId}}">
         </div>
         <div class="detail">
             <div class="user-detail">
@@ -10,7 +10,7 @@
                     <h1>{{photo.appUser.username}}</h1>
                     <h2>@{{photo.appUser.knownAs}}</h2>
                 </div>
-                <button class="close-btn" (click)="close()">X</button>
+                <button class="close-btn" (click)="back()">X</button>
             </div>
             <div class="title">
                 <p>{{photo.title}}</p>

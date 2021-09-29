@@ -11,6 +11,7 @@ namespace API.Entities
         public string Url { get; set; }
         public string Title { get; set; }
         public bool IsMain { get; set; }
+        public bool IsCover { get; set; }
         public DateTime Created { get; set; } = DateTime.Now;
         public AppUser AppUser { get; set; }
         public int AppUserId { get; set; }

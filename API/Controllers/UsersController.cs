@@ -74,7 +74,7 @@ namespace API.Controllers
             var photo = new Photo
             {
                 Url = result.SecureUrl.AbsoluteUri,
-                PublicId = result.PublicId
+                PublicId = result.PublicId,
             };
 
             if(user.Photos.Count == 0)
@@ -108,6 +108,27 @@ namespace API.Controllers
             var currentMain = user.Photos.FirstOrDefault(x => x.IsMain);
             if(currentMain != null) currentMain.IsMain = false;
             photo.IsMain = true;
+
+            if(await _userRepository.SaveAllAsync()) return NoContent();
+
+            return BadRequest("Faild to set main photo!");
+        }
+
+        [HttpPut("set-cover-photo/{photoId}")]
+        public async Task<ActionResult> SetCoverPhoto(int photoId)
+        {
+            var user = await _userRepository.GetUserByUsernameAsync(User.GetUsername());
+            
+            var photo = user.Photos.FirstOrDefault(x => x.Id == photoId);
+
+            if (photo.IsCover)
+            {
+                return BadRequest("This is already your main photo.");
+            }
+
+            var currentCover = user.Photos.FirstOrDefault(x => x.IsCover);
+            if(currentCover != null) currentCover.IsCover = false;
+            photo.IsCover = true;
 
             if(await _userRepository.SaveAllAsync()) return NoContent();
 

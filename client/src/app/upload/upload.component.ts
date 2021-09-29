@@ -33,7 +33,7 @@ export class UploadComponent implements OnInit {
   ngOnInit(): void {
     
     this.initializeUploader();
-    this.initalizeForm();
+    // this.initalizeForm();
     this.loadMember();
   }
 
@@ -44,11 +44,11 @@ export class UploadComponent implements OnInit {
     })
   }
 
-  initalizeForm(){
-    this.titleGroup = this.fb.group({
-      title: ['', Validators.required]
-    })
-  }
+  // initalizeForm(){
+  //   this.titleGroup = this.fb.group({
+  //     title: ['', Validators.required]
+  //   })
+  // }
 
   fileOverBase(event: any) {
     this.hasBaseDropzoneOver = event;
@@ -72,9 +72,9 @@ export class UploadComponent implements OnInit {
       this.imageSrc = url;
     }
 
-    this.uploader.onBuildItemForm = (fileItem: any, form: any) => {
-      form.append('title', this.titleGroup.value);
-    }
+    // this.uploader.onBuildItemForm = (fileItem: any, form: any) => {
+    //   form.append('title', this.titleGroup.value);
+    // }
 
 
     this.uploader.onSuccessItem = (item, response, status, headers) => {

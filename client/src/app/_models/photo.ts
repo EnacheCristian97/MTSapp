@@ -5,6 +5,7 @@ export interface Photo {
     id: number;
     url: string;
     isMain: boolean;
+    isCover: boolean;
     title: string;
     appUserId: string;
     appUser: Member;

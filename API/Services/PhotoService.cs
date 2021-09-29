@@ -35,7 +35,7 @@ namespace API.Services
                 var uploadParams = new ImageUploadParams
                 {
                     File = new FileDescription(file.FileName, stream),
-                    Transformation = new Transformation().Height(1920).Width(1080).Crop("fill").Gravity("face")
+                    // Transformation = new Transformation().Height(1080).Width(1920)
                 };
 
                 

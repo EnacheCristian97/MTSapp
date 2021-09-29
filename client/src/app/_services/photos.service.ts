@@ -37,10 +37,6 @@ import { PhotoParams } from "../_models/photoParams";
 
     }
 
-    getPhotosV2(){
-
-    }
-
     getPhoto(publicId: string)
     {
       const photo = [...this.photoCache.values()]
@@ -80,7 +76,4 @@ import { PhotoParams } from "../_models/photoParams";
     
       }
 
-      // public addTitle(model: any){
-      //   this.http.post(this.baseUrl + 'users/add-photo/', model);
-      // }
   }

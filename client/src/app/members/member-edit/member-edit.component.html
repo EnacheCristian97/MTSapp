@@ -1,9 +1,7 @@
-<!-- <app-upload class="upload" [isOpen]="isOpen" *ngIf="isOpen != false"></app-upload> -->
-
 <div class="page" *ngIf="member">
     <div class="header">
     <div class="cover">
-            <img src="../../../assets/bk.jpg" alt="">
+            <img src="{{member.photoCoverUrl || '../../../assets/bk.jpg'}}" alt="">
     <div class="img">
         <img src="{{member.photoUrl || '../../../../../assets/iconUser.png'}}" alt="{{member.knownAs}}">
     </div>
