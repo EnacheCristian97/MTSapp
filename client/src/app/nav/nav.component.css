@@ -25,10 +25,11 @@
 }
 
 .brand-img{
-    width: 50px;
+    width: 80px;
     height: 50px;
     margin-left: 10px;
     margin-top: 2px;
+    object-fit: contain;
 }
 
 .links{
@@ -103,21 +104,79 @@
 
 .upload a{
     display: flex;
+    position: relative;
     justify-content: center;
     align-items: center;
-    background-color: #fff;
+    padding: 20px 60px;
+    background: #fff;
     color: #000;
     text-decoration: none;
     font-size: 15px;
     font-weight: 600;
-    /* border-radius: 50%; */
     width: 100px;
     height: 40px;
+    transition: 1s;
+    overflow: hidden;
+    
     
 }
 
 .upload a:hover{
-    background-color: #158cdb;
+    background: rgb(111, 99, 218);
+    box-shadow: 0 0 5px rgb(111, 99, 218),
+                0 0 10px rgb(111, 99, 218),
+                0 0 15px rgb(111, 99, 218),
+                0 0 50px rgb(111, 99, 218);
+}
+
+.upload a::before{
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 400%;
+    background: rgb(111, 99, 218);
+    transition: 1s;
+    animation: animate 2s linear infinite;
+}
+
+.upload a:hover::before
+{
+    width: 120%;
+}
+
+.upload a::after{
+    content: '';
+    position: absolute;
+    inset: 4px;
+    background: #fff;
+    transition: 0.5s;
+}
+
+.upload a:hover::after{
+    background: rgb(111, 99, 218);
+}
+
+.upload a span {
+    position: relative;
+    z-index: 1;
+    color: #000000;
+    opacity: 0.5;
+    text-transform: uppercase;
+}
+
+upload a:hover span{
+    opacity: 1;
+} 
+
+@keyframes animate{
+    0%
+    {
+        transform: rotate(0deg);
+    }
+    100%
+    {
+        transform: rotate(360deg);
+    }
 }
 
 .upload a:active{

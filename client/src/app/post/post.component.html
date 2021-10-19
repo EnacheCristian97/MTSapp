@@ -1,29 +1,30 @@
 <div class="container">
     <div class="card" routerLink='/photos/{{photo.publicId}}' >
-        <div class="user">
-            <img src="{{photo.appUser.photoUrl}}" routerLink='/members/{{photo.appUser.username}}'>
-            <div class="name">
-                <h1 routerLink='/members/{{photo.appUser.username}}'>{{photo.appUser.username}}</h1>
-                <h2>@{{photo.appUser.knownAs}}</h2>
-            </div>
-        </div>
         <div class="imgBox">
             <img src="{{photo.url || '../../../../../assets/iconUser.png'}}" alt="">
         </div>
-        <div class="content">
-            <div class="interaction-icon">
-                <ul class="interaction-icon">
-                    <li class="fb"><a><i class="fa fa-heart" aria-hidden="true"></i></a></li>
-                    <li class="tw"><a><i class="fa fa-comments" aria-hidden="true"></i></a></li>
-                </ul>
+        <div class="details">
+            <div class="user">
+                <img src="{{photo.appUser.photoUrl}}" routerLink='/members/{{photo.appUser.username}}'>
+                <div class="name">
+                    <h1 routerLink='/members/{{photo.appUser.username}}'>{{photo.appUser.username}}</h1>
+                    <h2>@{{photo.appUser.knownAs}}</h2>
+                </div>
+            </div>
+            <h4>{{photo.title}}</h4>
+            <div class="date">
+                <p>{{photo.created | date}}</p>
+            </div>
+            <!-- <div class="content">
+                <div class="interaction-icon">
+                    <ul class="interaction-icon">
+                        <li class="fb"><a><i class="fa fa-heart" aria-hidden="true"></i></a></li>
+                        <li class="tw"><a><i class="fa fa-comments" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div> -->
             </div>
         </div>
-        <div class="details">
-            <h4>{{photo.title}}</h4>
-        </div>
-        <div class="date">
-            <p>{{photo.created | date}}</p>
-        </div>
+
     </div>
-</div>
+
 

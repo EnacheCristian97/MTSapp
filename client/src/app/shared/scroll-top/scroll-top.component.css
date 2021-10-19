@@ -1,0 +1,19 @@
+.scroll-to-top {
+    position: fixed;
+    bottom: 15px;
+    left: 50%;
+    transform: translate(-50%);
+    opacity: 0;
+    transition: all .2s ease-in-out;
+   }
+.show-scrollTop {
+    opacity: 1;
+    transition: all .2s ease-in-out;
+   }
+
+   button{
+       width: 150px;
+       height: 50px;
+       border-radius: 10px;
+       background: rgba(200, 0, 0, 0.733);
+   }

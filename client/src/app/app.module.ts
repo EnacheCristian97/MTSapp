@@ -33,6 +33,7 @@ import { UploadComponent } from './upload/upload.component';
 import { TextInputsComponent } from './_forms/text-inputs/text-inputs.component';
 import { PostComponent } from './post/post.component';
 import { PostDetailComponent } from './post/post-detail/post-detail.component';
+import { ScrollTopComponent } from './shared/scroll-top/scroll-top.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { PostDetailComponent } from './post/post-detail/post-detail.component';
     UploadComponent,
     TextInputsComponent,
     PostComponent,
-    PostDetailComponent
+    PostDetailComponent,
+    ScrollTopComponent
   ],
   imports: [
     BrowserModule,

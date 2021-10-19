@@ -1,4 +1,4 @@
-import { Component, OnInit, Renderer2 } from '@angular/core';
+import { Component, HostListener, Inject, OnInit, Renderer2 } from '@angular/core';
 import { map, take } from 'rxjs/operators';
 import { Member } from '../_models/member';
 import { Pagination } from '../_models/pagination';
@@ -9,6 +9,7 @@ import { AccountService } from '../_services/account.service';
 import { MembersService } from '../_services/members.service';
 import { PhotoService } from '../_services/photos.service';
 import _ from 'lodash';
+import { DOCUMENT } from '@angular/common';
 
 
 @Component({
@@ -17,12 +18,14 @@ import _ from 'lodash';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  @HostListener("window:scroll", [])
   photos : Photo[];
   pagination: Pagination;
   photoParams: PhotoParams 
   userParams: UserParams;
   photo: Photo;
   members: Member[];
+  windowScrolled: boolean;
 
   constructor(private renderer: Renderer2, private photoService: PhotoService,
      private accountService: AccountService, private memberService: MembersService) {  
@@ -32,6 +35,7 @@ export class HomeComponent implements OnInit {
 
       })  
   }
+  
   ngOnInit(): void {
     this.initialLoadPost();
     this.loadMembers();
@@ -66,7 +70,5 @@ export class HomeComponent implements OnInit {
     this.loadPost();
  
   }
-
-
 
 }
