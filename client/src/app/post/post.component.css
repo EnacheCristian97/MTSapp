@@ -42,7 +42,7 @@
     width: 100%;
     height: 50%;
     background: linear-gradient(0deg, #000 50%, transparent);
-    transition: 0.5s;
+    transition: 0.3s;
     z-index: 1;
 }
 
@@ -72,8 +72,12 @@
      display: flex;
      justify-content: flex-start;
      align-items: center;
-     width: 100%;
+     width: 150px;
      margin: 0;
+     background: #000;
+     padding: 5px;
+     border-top-left-radius: 10px;
+     border-top-right-radius: 10px;
  }
 
 .user img{
@@ -82,7 +86,7 @@
     margin: 0;
     border-radius: 50%;
     border: 1px  rgba(0, 0, 0, 0.116);
-    
+    object-fit: cover;   
 }
 
 .user img:hover{
@@ -136,6 +140,15 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    position: absolute;
+    padding: 5px;
+    right: 0;
+    bottom: 0;
+}
+
+.interaction-icon i {
+    font-size: 25px;
+    color: #fff;
 }
 
 .interaction-icon li
@@ -170,5 +183,5 @@
 .date p 
 {
     font-size: 15px;
-    color: #555;
+    color: rgb(36, 123, 173);
 }

@@ -1,5 +1,5 @@
 <div class="content" *ngIf="member" >
-    <div class="card" *ngFor="let photo of member.photos"  routerLink='/photos/{{photo.photoId}}'  >
+    <div class="card" *ngFor="let photo of member.photos"  routerLink='/photos/{{photo.publicId}}'  >
         <div class="imgBox" >
             <img src="{{photo.url}}" alt="">
         </div>

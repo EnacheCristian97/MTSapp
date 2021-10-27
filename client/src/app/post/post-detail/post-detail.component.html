@@ -5,10 +5,12 @@
         </div>
         <div class="detail">
             <div class="user-detail">
-                <img src="{{photo.appUser.photoUrl}}" alt="" routerLink='/members/{{photo.appUser.username}}'>
+                <div class="img">
+                    <img src="{{photo.appUser.photoUrl}}" alt="" routerLink='/members/{{photo.appUser.username}}'>
+                </div>
                 <div class="username">
                     <h1>{{photo.appUser.username}}</h1>
-                    <h2>@{{photo.appUser.knownAs}}</h2>
+                    <h2>{{photo.created | date}}</h2>
                 </div>
                 <button class="close-btn" (click)="back()">X</button>
             </div>

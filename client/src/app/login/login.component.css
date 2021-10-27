@@ -1,6 +1,7 @@
 *{
     box-sizing: border-box;
     margin: 0px;
+    
 }
 
 .main{
@@ -15,7 +16,7 @@
     transform: translateX(-50%);
     background: rgba(225,225,225, 0.1);
     border-radius: 10px;
-    backdrop-filter: blur(80px);
+    backdrop-filter: blur(10px);
     box-shadow: rgba(0,0,0, 0.1);
     border: 1px solid rgba(225,225,225, 0.3);
     border-right: 1px solid rgba(225,225,225, 0.2);
@@ -32,7 +33,7 @@
     border-right: 1px solid rgba(225,225,225, 0.2);
     border-bottom: 1px solid rgba(225,225,225, 0.2);
     background: rgba(225,225,225, 0.1);
-    backdrop-filter: blur(30px);
+    backdrop-filter: blur(50px);
     border-radius: 10px;
     animation: animate 10s linear infinite;
     animation-delay: calc(-1s * var(--i));

@@ -15,5 +15,13 @@
        width: 150px;
        height: 50px;
        border-radius: 10px;
-       background: rgba(200, 0, 0, 0.733);
+       outline: none;
+       border: none;
+       background: rgba(200, 0, 0, 0.835);
+       box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.507);
+   }
+
+   button:active{
+       transition: 0.2s;
+       transform: scale(0.90);
    }

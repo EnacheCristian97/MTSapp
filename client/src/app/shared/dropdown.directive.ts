@@ -22,6 +22,7 @@ export class DropdownDirective {
         {
           this.isOpen = false;
           this.renderer.removeClass(part, 'active');
-        }    
+        } 
+        
   }
 }

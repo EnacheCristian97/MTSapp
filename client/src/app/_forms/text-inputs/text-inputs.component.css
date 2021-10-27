@@ -18,7 +18,7 @@
     padding: 10px 20px;
     margin-bottom: 0px;
     border-radius: 35px;
-    border: 1px solid rgba(225,225,225, 0.3);
+    /* border: 1px solid rgba(225,225,225, 0.3); */
     border-right: 1px solid rgba(225,225,225, 0.2);
     border-bottom: 1px solid rgba(225,225,225, 0.2);
     font-size: 16px;
@@ -29,6 +29,10 @@
 
 .form-group input::placeholder{
     color: #fff;
+}
+
+.form-group input:focus{
+    outline: 2px solid #125f93;
 }
 
 .form-button{
@@ -51,12 +55,13 @@
     color: #fff;
     padding: 1px;
     border-radius:0 0 8px 8px;
-    animation: animation 1s infinite ease;
+    animation: animation 3s infinite;
 }
 
 @keyframes animation {
     from{
         background: rgba(255, 0, 0, 0.3);
+        border: 1px solid rgba(194, 0, 0, 0.87);
     }
     to{
         background: rgba(194, 0, 0, 0.87);

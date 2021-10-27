@@ -63,7 +63,7 @@ namespace API.Controllers
         }
 
         [HttpPost("add-photo")]
-        public async Task<ActionResult<PhotoDto>> AddPhoto(IFormFile file)
+        public async Task<ActionResult<PhotoDto>> AddPhoto(IFormFile file, IFormCollection title)
         {
             var user = await _userRepository.GetUserByUsernameAsync(User.GetUsername());
 
@@ -75,6 +75,7 @@ namespace API.Controllers
             {
                 Url = result.SecureUrl.AbsoluteUri,
                 PublicId = result.PublicId,
+                Title = title["title"]
             };
 
             if(user.Photos.Count == 0)

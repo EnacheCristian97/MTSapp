@@ -14,6 +14,7 @@ body {
     background: transparent;  /* Optional: just make scrollbar invisible */
 }
 
+
 app-root {
     position: relative;
 }
