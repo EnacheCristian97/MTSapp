@@ -1,5 +1,6 @@
 *{
-    backdrop-filter: blur(10px);
+    /* backdrop-filter: blur(10px); */
+    background: url('../../assets/bk2.jfif') rgb(77, 77, 77);
 }
 .page{
     display: flex;

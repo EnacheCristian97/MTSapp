@@ -2,26 +2,23 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-.page
-{
-    width: 100%;
-    height: 100vh;
+    
 }
 
 .upload{
-    display: flex;
+    display: block;
     justify-content: center;
-    height: 100vh;
+    align-items: center;
+    flex-wrap: wrap;
     backdrop-filter: blur(20px);
 }
+
 
 .photo-preview{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 80%;
+    width: 50%;
     background-color: rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(20px);
 }
@@ -30,23 +27,14 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 1100px;
-        height: 810px;
-        background-color: rgb(34, 34, 34);
+        width: 700px;
+        height: 500px;
 }
 
 .imgPre{
-    width: 1000px;
-    height: 800px;
+    width: 700px;
+    height: 500px;
     object-fit:scale-down;
-}
-
-.table{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: auto;
-    height: 100vh;
 }
 
 .form-div{
@@ -55,26 +43,55 @@
     align-items: center;
 }
 
-.tbody{
+.desc{
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 10px;
+    width: 100%;
 }
 
+label{
+    font-size: 15px;
+    color: rgb(161, 161, 161);
+}
 
+.desc .form-div{
+    margin-top: 10px;
+    width: 50%;
+}
+form{
+    width: 100%;
+}
+
+form textarea{
+    width: 100%;
+    height: 50px;
+    background:transparent;
+    backdrop-filter: blur(10px);
+    border: 1px solid #fff;
+    border-radius: 5px;
+    padding: 5px    ;
+    resize: none;
+}
+
+textarea:focus{
+    border:2px solid violet;
+}
 
 .upload-drag{
-    background-color: #000;
-    margin-top: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: rgba(0, 0, 0, 0.507);
+    margin-top: 0;
     flex-direction: column;
-    width: 20%;
+    width: 100%;
+    height: 100vh;
 }
 
 .drop-zone{
-    display: block;
+    display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -84,14 +101,22 @@
     margin-bottom: 5px;
 }
 
-.drop-zone .select-file{
+.select-file{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 5px;
+    margin-bottom: 10px;
 }
 
 .nv-file-over{
     border: 3px dotted red;
+}
+
+.middle-drop{
+display: block;
+justify-content: center;
+align-items: center;
 }
 
 .middle-drop i {
@@ -137,7 +162,7 @@ font-size: 50px;
 .upload-queue{
     display: block;
     position: absolute;
-    bottom: 10px;
+    bottom: 40px;
     text-align: center;
     
 }
@@ -145,6 +170,7 @@ font-size: 50px;
 .upload-queue-order{
     display: block;
 }
+
 button{
     width: 80px;
     height: 40px;
@@ -156,6 +182,22 @@ button{
     border-radius: 10px;
     margin: 4px;
     color: #fff;
+}
+
+.progress{
+    width: 20px;
+    background-color: rgba(255, 255, 255, 0.253);
+    position: relative;
+    border-radius: 7px;
+
+}
+
+.progress .progress-bar {
+    position: absolute;
+    height: 100%;
+    border-radius: 7px;
+    background-color: violet;
+    animation: progress-animation 5s forwards;
 }
 
 button:disabled{

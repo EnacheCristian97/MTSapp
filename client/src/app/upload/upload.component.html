@@ -1,7 +1,39 @@
   <div class="upload">
+    <div class="case">
+
+    
+    <div class="upload-drag">
+        <label for="title">What are you thinking?</label>
+        <div class="desc">
+            <div class="form-div">
+                <form [formGroup]="titleGroup" class="form">
+                    <textarea type="text" name="title" formControlName='title' cols="30" rows="10" ></textarea>
+                </form>
+            </div>
+        </div>
+
+         <div class="select-file">
+            <div class="select-btn">
+                <input type="file" ng2FileSelect [uploader]="uploader" multiple class="inputfile" id="file" />
+                <label for="file"><i class="fa fa-upload"></i>Choose a file</label>
+            </div>
+         </div>
 
     <div class="photo-preview">
         <div class="imgFrame">
+
+       <div ng2FileDrop
+            *ngIf="!imageSrc"
+            [ngClass]="{'nv-file-over': hasBaseDropzoneOver}"
+            (fileOver)="fileOverBase($event)"
+            [uploader]="uploader"
+            class="drop-zone">
+            <div class="middle-drop">
+               <i class="fa fa-upload"></i>
+               <p>Drop photos here!</p>
+            </div>
+       </div>
+
         <table class="table">
             <tbody class="tbody">
             <tr *ngFor="let item of uploader.queue" class="tr-info">
@@ -11,43 +43,18 @@
                 </tr>
             </tbody>
         </table>
+
     </div>
     </div>
- <div class="form-div">
-    <form [formGroup]="titleGroup" class="form">
-        <input type="text" name="title" formControlName='title' placeholder="Title">
-    </form>
- </div> 
- 
-    <div class="upload-drag">
-        <div ng2FileDrop
-             [ngClass]="{'nv-file-over': hasBaseDropzoneOver}"
-             (fileOver)="fileOverBase($event)"
-             [uploader]="uploader"
-             class="drop-zone">
-             <div class="middle-drop">
-                <i class="fa fa-upload"></i>
-                <p>Drop photos here!</p>
-             </div>
-             <div class="select-file">
-                <div class="select-btn">
-                    <input type="file" ng2FileSelect [uploader]="uploader" multiple class="inputfile" id="file" />
-                    <label for="file"><i class="fa fa-upload"></i>Choose a file</label>
-                </div>
-            </div>
-        </div>
+    
+
+
 
     <div class="upload-queue">
 
         <div class="upload-queue-order">
-            <h3>Upload queue</h3>
-            <p>Queue length: {{ uploader?.queue?.length }}</p>
-            <div>
-                Queue progress:
-                <div class="progress">
-                    <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': uploader.progress + '%' }"></div>
-                </div>
-            </div>
+            <!-- <h3>Upload queue</h3>
+            <p>Queue length: {{ uploader?.queue?.length }}</p> -->
             <button type="button" class="btn-success"
                     (click)="uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length">
                 <span class="fa fa-upload"></span> Upload
@@ -65,5 +72,5 @@
     </div>
 
     </div>
-
+</div>
   </div>

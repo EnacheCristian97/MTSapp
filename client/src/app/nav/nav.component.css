@@ -136,7 +136,7 @@
     height: 400%;
     background: rgb(111, 99, 218);
     transition: 1s;
-    animation: animate 2s linear infinite;
+    animation: animate 4s linear infinite;
 }
 
 .upload a:hover::before
