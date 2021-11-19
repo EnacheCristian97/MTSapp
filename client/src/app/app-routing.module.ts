@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { MemberDetailComponent } from './members/member-detail/member-detail.component';
 import { MemberEditComponent } from './members/member-edit/member-edit.component';
 import { MemberListComponent } from './members/member-list/member-list.component';
+import { MemberMessagesComponent } from './members/member-messages/member-messages.component';
 import { MessagesComponent } from './messages/messages.component';
 import { PostDetailComponent } from './post/post-detail/post-detail.component';
 import { UploadComponent } from './upload/upload.component';
@@ -26,7 +27,8 @@ const routes: Routes = [
       {path: 'members', component: MemberListComponent},
       {path: 'members/:username', component: MemberDetailComponent},
       {path: 'member/edit', component: MemberEditComponent, canDeactivate: [PreventUnsavedChangesGuard]},
-      {path: 'messages', component: MessagesComponent},  
+      {path: 'messages', component: MessagesComponent},
+      {path: 'messages-conversation', component:MemberMessagesComponent},
       {path: 'upload', component: UploadComponent}   
     ]
   },

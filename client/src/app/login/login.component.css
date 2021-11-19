@@ -1,7 +1,6 @@
 *{
     box-sizing: border-box;
     margin: 0px;
-    
 }
 
 .main{
@@ -141,13 +140,19 @@
 
 .form-group{
     width: 100%;
-    margin-top: 20px;
-    
+    margin-top: 20px
+}
+
+.form-group:-internal-autofill-selected {
+    background-color: rgb(225,225,225, 0.2) !important;
+    background-image: none !important;
+    color: rgb(255, 255, 255) !important;
 }
 
 .form-group input{
     width: 100%;
-    background: rgba(225,225,225, 0.2);
+    background-color: rgba(225,225,225, 0.2) !important;
+    background-image: none !important;
     border: none;
     outline: none;
     padding: 10px 20px;
@@ -160,7 +165,11 @@
     color: #fff;
     box-shadow: 0 5px 15px rgba(0,0,0, 0.05);
 }
-
+input:-internal-autofill-selected {
+    background-color: rgb(225,225,225, 0.2) !important;
+    background-image: none !important;
+    color: rgba(255, 255, 255, 0.13) !important;
+}
 .form-group input::placeholder
 {
     color: #fff;

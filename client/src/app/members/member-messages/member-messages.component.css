@@ -1,0 +1,113 @@
+.card{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    border: none;
+    width: 500px;
+    background-color: rgba(0, 0, 0, 0.603);
+    backdrop-filter: blur(10px);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    overflow: hidden;
+    
+}
+
+.header-chat{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    height: 40px;
+    background-color: #fff;
+    align-items: center;
+}
+
+.header-chat i{
+    color: rgb(111, 99, 218);
+    font-size: 18px;
+    font-weight: 550;
+    letter-spacing: 1px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+
+}
+
+.chat{
+    list-style: none;
+    max-height: 335px;
+    overflow-y: scroll;
+}
+
+.chat li{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    
+    border-bottom: 1px solid #b3a9a96e;
+    overflow-y: scroll;
+
+}
+
+.chat-img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.chat-img img{
+    width: 50px;
+    height: 50px;
+    object-fit:cover;
+    border-radius: 50%;
+}
+
+.card-footer{
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+form{
+    width: 100%;
+}
+
+.form-input{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.form-input input{
+    width: 100%;
+    height: 35px;
+    background-color: #b3a9a96e;
+    border:none;
+    padding: 4px;
+    border-radius: 10px;
+    margin-right: 5px;
+}
+
+.input:focus{
+    outline-color: rgb(111, 99, 218);
+}
+
+.input-append{
+    width: 35px;
+    height: 35px;
+}
+
+.input-append button{
+    width: 35px;
+    height: 35px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(111, 99, 218);
+
+}
+
+.input-append button:active{
+    transform: scale(0.9);
+}
+

@@ -6,14 +6,15 @@
 }
 
 body {
-    background:url(./assets/colorful.png), rgb(15, 15, 15);
+    height: 100vh;
+    background: url("./assets/test-bk.jpg") no-repeat center;
+    background-size: auto;
 }
 
 ::-webkit-scrollbar {
     width: 0;  /* Remove scrollbar space */
     background: transparent;  /* Optional: just make scrollbar invisible */
 }
-
 
 app-root {
     position: relative;
@@ -42,7 +43,7 @@ ul.pagination li{
 }
 
 ul.pagination li.active {
-    background: coral;
+    background: rgb(111, 99, 218);;
 }
 
 a.page-link{

@@ -34,6 +34,9 @@ import { TextInputsComponent } from './_forms/text-inputs/text-inputs.component'
 import { PostComponent } from './post/post.component';
 import { PostDetailComponent } from './post/post-detail/post-detail.component';
 import { ScrollTopComponent } from './shared/scroll-top/scroll-top.component';
+import { MemberMessagesComponent } from './members/member-messages/member-messages.component';
+import { MessageDirective } from './shared/message.directive';
+import { CloseDirective } from './shared/close.directive';
 
 @NgModule({
   declarations: [
@@ -50,6 +53,8 @@ import { ScrollTopComponent } from './shared/scroll-top/scroll-top.component';
     MemberListComponent,
     MemberCardComponent,
     DropdownDirective,
+    MessageDirective,
+    CloseDirective,
     MemberPhotoComponent,
     MemberEditComponent,
     PhotoEditorComponent,
@@ -59,7 +64,8 @@ import { ScrollTopComponent } from './shared/scroll-top/scroll-top.component';
     TextInputsComponent,
     PostComponent,
     PostDetailComponent,
-    ScrollTopComponent
+    ScrollTopComponent,
+    MemberMessagesComponent
   ],
   imports: [
     BrowserModule,

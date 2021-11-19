@@ -2,6 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    
 }
 
 .page
@@ -62,12 +63,33 @@ justify-content:flex-start;
 }
 
 .detail-field{
+    display: block;
     text-align: center;
 }
 
 .detail-field i {
     font-size: 30px;
     color: rgb(206, 5, 5);
+}
+
+.message button{
+    width: 100px;
+    height: 30px;
+    outline: none;
+    border: none;
+    margin-top: 5px;
+    background-color: #04c333;
+    border-radius: 5px;
+}
+
+.message button:active{
+    transform: scale(0.9);
+}
+
+.message button i{
+    color: #fff;
+    font-size: 15px;
+    margin-right: 4px;
 }
 
 .cover{
@@ -200,4 +222,35 @@ tabs{
     justify-content:center;
     align-items: center;
     
+}
+
+.message-tab{
+    position: fixed;
+    width: 500px;
+    height: 420px;
+    right: 10px;
+    bottom: -350px;
+    z-index: 100;
+    transition: 400ms;
+}
+
+.message-tab.active{
+    bottom: 30px;
+}
+
+.message-tab .close{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 5px;
+}
+
+.message-tab .close i{
+    font-size: 25px;
+    padding: 4px;
+    padding-bottom: 0;
+    background-color: #fff;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    color: black;
 }

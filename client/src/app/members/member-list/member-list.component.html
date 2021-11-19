@@ -1,9 +1,8 @@
+<div class="page-ly">
 <body>
     <div class="container" *ngFor="let member of members ">
         <app-member-card [member] = "member"></app-member-card>
     </div>
-
-
 </body>
 <div class="page" *ngIf="pagination">
     <pagination 
@@ -17,6 +16,7 @@
     firstText="&laquo;"
     lastText="&raquo;">
     </pagination>
+</div>
 </div>
 
 

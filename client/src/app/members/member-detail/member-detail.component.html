@@ -10,8 +10,14 @@
         <div class="detail-field">
             <h3>{{member.knownAs}}</h3>
             <p><i class="fa fa-map-marker"></i> {{member.city}}, {{member.country}}</p>
+            <div class="message">
+                <button class="button" appMessage (click)="onActiveTab($event)"><i class="fa fa-paper-plane" >
+                </i>Message </button>
+            </div>
         </div>
     </div>
+
+
 
     </div>
 </div>
@@ -57,8 +63,20 @@
                <tab class="follow-tab" tabTitle="Follows" routerLinkActive="active" > 
                   
             </tab>
+
+            <!-- <tab class="messages-tab" tabTitle="Messages" routerLinkActive="active" >
+                    <app-member-messages [username]="member.username"></app-member-messages>
+            </tab> -->
             </tabs>
+
        </div>
-    
+
+       <div class="message-tab" appMessage  >
+        <div class="close"><i class="fa fa-times-circle-o" appClose></i></div>
+        <app-member-messages [messages]="messages" [username]="member.username" ></app-member-messages>
+       </div>
+
+
     </div>
     
+
