@@ -28,8 +28,8 @@
             <div class="menu" >
                 <h3>{{user.knownAs}}</h3>
                 <ul>
-                    <li><img src="../../assets/user (1).png" alt=""><a routerLink='/member/edit'>My Profile</a></li>
-                    <li><img src="../../assets/mail-inbox-app.png" alt=""><a routerLink='/messages'>Inbox</a></li>
+                    <li routerLink='/member/edit'><img src="../../assets/user (1).png" alt=""><a >My Profile</a></li>
+                    <li routerLink='/messages'><img src="../../assets/mail-inbox-app.png" alt=""><a >Inbox</a></li>
                     <li><img src="..//../assets/exit.png" alt="" (click)="logout()"><a (click)="logout()">Logout</a></li>
                 </ul>
             </div>

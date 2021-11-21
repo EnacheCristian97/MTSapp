@@ -35,6 +35,7 @@ export class MemberDetailComponent implements OnInit {
   }
 
   onActiveTab(data: Message){
+    if(this.messages.length === 0)
     this.loadMessages();
   }
 

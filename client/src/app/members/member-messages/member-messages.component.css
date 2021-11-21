@@ -12,6 +12,11 @@
     
 }
 
+small{
+    display: flex;
+    justify-content: space-between;
+}
+
 .header-chat{
     display: flex;
     justify-content: space-between;
@@ -31,35 +36,94 @@
 
 }
 
+.no-msg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 335px;
+}
+
 .chat{
     list-style: none;
-    max-height: 335px;
+    height: 335px;
     overflow-y: scroll;
+}
+
+.chat-body{
+    position: relative;
+    background-color: #fff;
+    width: 100%;
+    border-radius: 0px 5px 5px 5px;
+    z-index: 0;
+    padding: 4px;
+}
+
+.chat-body::before{
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    position: absolute;
+    top:0;
+    left: -8px;
+    border-radius: 0 0px 0 10px;
+    z-index: 1;
+}
+
+.chat-body p{
+    color: #000;
+}
+
+.header span{
+    color: #000;
+}
+
+.header .name{
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.header .text-danger i{
+    margin-left: 4px;
+    color: rgb(184, 0, 0);
+
+}
+
+.header .text-success i{
+    margin-left: 4px;
+    color: rgb(30, 197, 0);
+
 }
 
 .chat li{
     display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-    padding: 10px;
-    
-    border-bottom: 1px solid #b3a9a96e;
+    padding: 8px;   
     overflow-y: scroll;
 
 }
 
 .chat-img{
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     margin-right: 10px;
 }
 
 .chat-img img{
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     object-fit:cover;
     border-radius: 50%;
+}
+
+.timeago{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 2px;
+    padding-bottom: 0;
+    color: #555;
+    font-size: 12px;
 }
 
 .card-footer{
@@ -109,5 +173,9 @@ form{
 
 .input-append button:active{
     transform: scale(0.9);
+}
+
+.input-append button:disabled{
+    background-color: rgb(166, 161, 207);
 }
 

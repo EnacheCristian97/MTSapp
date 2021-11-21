@@ -71,8 +71,8 @@
 
        </div>
 
-       <div class="message-tab" appMessage  >
-        <div class="close"><i class="fa fa-times-circle-o" appClose></i></div>
+       <div class="message-tab" appMessage (click)="onActiveTab($event)" >
+        <div class="close" ><i class="fa fa-times-circle-o" appClose></i></div>
         <app-member-messages [messages]="messages" [username]="member.username" ></app-member-messages>
        </div>
 

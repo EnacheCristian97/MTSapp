@@ -227,22 +227,26 @@ tabs{
 .message-tab{
     position: fixed;
     width: 500px;
-    height: 420px;
+    min-height: 420px;
     right: 10px;
-    bottom: -350px;
+    bottom: -380px;
     z-index: 100;
     transition: 400ms;
 }
 
 .message-tab.active{
-    bottom: 30px;
+    bottom: 5px;
 }
 
 .message-tab .close{
+    position: absolute;
+    top: 4px;
+    right: 0;
     display: flex;
     align-items: center;
     justify-content: flex-end;
     margin-right: 5px;
+    z-index: 151;
 }
 
 .message-tab .close i{
@@ -252,5 +256,5 @@ tabs{
     background-color: #fff;
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
-    color: black;
+    color: rgb(111, 99, 218);
 }

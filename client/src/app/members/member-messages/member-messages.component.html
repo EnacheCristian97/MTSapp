@@ -1,11 +1,11 @@
-<div class="card">
+<div class="card" >
 
     <div class="header-chat">
         <i class="fa fa-commenting-o"> Message</i>
     </div>
 
-    <div class="card-box">
-        <div *ngIf="messages?.length === 0">
+    <div class="card-box" (click)="$event.stopPropagation()">
+        <div class="no-msg" *ngIf="messages?.length === 0">
             No messages yet! Start a conversation ! 
         </div>
 
@@ -17,28 +17,30 @@
                 <div class="chat-body">
                     <div class="header">
                         <small>
-                            <span class="fa fa-clock-o">
-                                {{message.messageSent | timeago}}
-                            </span>
+                            <span class="name">{{message.senderUsername}}</span>
                             <span class="text-danger" *ngIf="!message.dateRead && message.senderUsername !== username">
-                                (unread)
+                                <i class="fa fa-circle-o"></i>
                             </span>
                             <span class="text-success" *ngIf="message.dateRead && message.senderUsername !== username">
-                                (read {{message.dateRead | timeago}})
+                                <i class="fa fa-check "></i>
+                                <!-- {{message.dateRead | timeago}}) -->
                             </span>
 
                         </small>
                     </div>
                     <p>{{message.content}}</p>
+                    <span class="timeago">
+                        {{message.messageSent | timeago}}
+                    </span>
                 </div>
             </li>
-
         </ul>
     </div>
     <div class="card-footer">
         <form #messageForm="ngForm" (ngSubmit)="sendMessage()" autocomplete="off">
             <div class="form-input">
                 <input
+                (click)="$event.stopPropagation()"
                  name="messageContent"
                  required
                  [(ngModel)]="messageContent"
@@ -46,7 +48,7 @@
                  type="text" 
                  placeholder="Send a private message!">
                 <div class="input-append">
-                    <button [disabled]="!messageForm.valid" class="btn-send" type="submit">
+                    <button (click)="$event.stopPropagation()" [disabled]="!messageForm.valid" class="btn-send" type="submit">
                         <i class="fa fa-paper-plane"></i>
                     </button>
                 </div>
