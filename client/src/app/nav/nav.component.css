@@ -111,13 +111,14 @@
     position: relative;
     justify-content: center;
     align-items: center;
-    padding: 20px 60px;
+    /* padding: 20px 60px; */
     background: #fff;
     color: #000;
     text-decoration: none;
+    border-radius: 50%;
     font-size: 15px;
     font-weight: 600;
-    width: 100px;
+    width: 40px;
     height: 40px;
     transition: 1s;
     overflow: hidden;
@@ -136,7 +137,7 @@
 .upload a::before{
     content: '';
     position: absolute;
-    width: 40px;
+    width: 20px;
     height: 400%;
     background: rgb(111, 99, 218);
     transition: 1s;
@@ -151,6 +152,7 @@
 .upload a::after{
     content: '';
     position: absolute;
+    border-radius: 50%;
     inset: 4px;
     background: #fff;
     transition: 0.5s;

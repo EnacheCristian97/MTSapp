@@ -37,6 +37,11 @@ import { ScrollTopComponent } from './shared/scroll-top/scroll-top.component';
 import { MemberMessagesComponent } from './members/member-messages/member-messages.component';
 import { MessageDirective } from './shared/message.directive';
 import { CloseDirective } from './shared/close.directive';
+import { AdminPanelComponent } from './admin/admin-panel/admin-panel.component';
+import { HasRoleDirective } from './_directives/has-role.directive';
+import { UserManagementComponent } from './admin/user-management/user-management.component';
+import { PhotoManagementComponent } from './admin/photo-management/photo-management.component';
+import { RolesModalComponent } from './modals/roles-modal/roles-modal.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +70,12 @@ import { CloseDirective } from './shared/close.directive';
     PostComponent,
     PostDetailComponent,
     ScrollTopComponent,
-    MemberMessagesComponent
+    MemberMessagesComponent,
+    AdminPanelComponent,
+    HasRoleDirective,
+    UserManagementComponent,
+    PhotoManagementComponent,
+    RolesModalComponent
   ],
   imports: [
     BrowserModule,

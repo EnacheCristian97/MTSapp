@@ -4,6 +4,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { TimeagoModule } from 'ngx-timeago';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 
 
@@ -16,11 +17,13 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     }) ,
     PaginationModule.forRoot(),
     TimeagoModule.forRoot(),
+    ModalModule.forRoot(),
     InfiniteScrollModule
   ],
   exports: [
     PaginationModule,
     TimeagoModule,
+    ModalModule,
     InfiniteScrollModule
   ]
 })

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminPanelComponent } from './admin/admin-panel/admin-panel.component';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { ServerErrorComponent } from './errors/server-error/server-error.component';
 import { HomeComponent } from './home/home.component';
@@ -11,6 +12,7 @@ import { MemberMessagesComponent } from './members/member-messages/member-messag
 import { MessagesComponent } from './messages/messages.component';
 import { PostDetailComponent } from './post/post-detail/post-detail.component';
 import { UploadComponent } from './upload/upload.component';
+import { AdminGuard } from './_guards/admin.guard';
 import { AuthGuard } from './_guards/auth.guard';
 import { PreventUnsavedChangesGuard } from './_guards/prevent-unsaved-changes.guard';
 
@@ -29,7 +31,8 @@ const routes: Routes = [
       {path: 'member/edit', component: MemberEditComponent, canDeactivate: [PreventUnsavedChangesGuard]},
       {path: 'messages', component: MessagesComponent},
       {path: 'messages-conversation', component:MemberMessagesComponent},
-      {path: 'upload', component: UploadComponent}   
+      {path: 'upload', component: UploadComponent},
+      {path: 'admin', component: AdminPanelComponent, canActivate: [AdminGuard]}   
     ]
   },
   {path: 'auth', component: LoginComponent},

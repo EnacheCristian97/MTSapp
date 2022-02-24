@@ -1,0 +1,47 @@
+*{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+}
+.row-table{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.table-adm{
+    margin-top: 10px;
+    width: 1000px;
+    border: 1px solid snow;
+    background-color: rgba(31, 31, 31, 0.342);
+    backdrop-filter: blur(10px);
+    height: 80vh;
+}
+ .table-adm .th{
+     border: 2px solid snow;
+ }
+.table-adm td{
+    border-bottom: 1px solid snow;
+}
+ .td-username
+ {
+     text-align:center;
+     border: 1px solid white;
+     border-bottom: 1px solid white;
+ }
+
+ .btn-edit{
+     border-radius: 5px;
+     border: none;
+     color: #000;
+     font-weight: 700;
+     background-color: rgba(255, 0, 0, 0.527);
+     padding: 10px;
+ }
+
+ h2{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 18px;
+ }
+
+

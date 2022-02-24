@@ -1,4 +1,4 @@
-import { Component, HostListener, Inject, OnInit, Renderer2 } from '@angular/core';
+import { Component, OnInit, Renderer2 } from '@angular/core';
 import { map, take } from 'rxjs/operators';
 import { Member } from '../_models/member';
 import { Pagination } from '../_models/pagination';
@@ -9,7 +9,6 @@ import { AccountService } from '../_services/account.service';
 import { MembersService } from '../_services/members.service';
 import { PhotoService } from '../_services/photos.service';
 import _ from 'lodash';
-import { DOCUMENT } from '@angular/common';
 
 
 @Component({

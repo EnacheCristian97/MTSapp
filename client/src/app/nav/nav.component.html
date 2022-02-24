@@ -14,12 +14,15 @@
         <div class="home-link" *ngIf="accountService.currentUser$| async">
             <a routerLink='/members' routerLinkActive="active" >Members</a>
         </div>
+        <div class="home-link" *appHasRole='["Admin", "Moderator"]'>
+            <a routerLink='/admin' routerLinkActive="active" >Admin</a>
+        </div>
     </div>
 </div>
 
 <div class="interaction">
     <div class="upload" *ngIf="accountService.currentUser$| async">
-        <a routerLink="/upload" ><span>Upload</span></a>
+        <a routerLink="/upload" ><span>U</span></a>
     </div>
     <div class="action" *ngIf="(accountService.currentUser$ | async) as user">
         <div class="profile" appDropdown>

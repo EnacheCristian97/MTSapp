@@ -12,12 +12,14 @@
    }
 
    button{
+       position: relative;
        width: 150px;
        height: 50px;
        border-radius: 10px;
        outline: none;
        border: none;
        background: rgba(200, 0, 0, 0.835);
+       z-index: 1010;
        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.507);
    }
 
