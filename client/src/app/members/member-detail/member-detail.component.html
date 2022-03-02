@@ -1,9 +1,13 @@
 <div class="page" *ngIf="member">
     <div class="header">
     <div class="cover">
-            <img src="{{member.photoCoverUrl || '../../../assets/bk.jpg'}}" alt="">
+        <img src="{{member.photoCoverUrl || '../../../assets/bk.jpg'}}" alt="">
     <div class="img">
         <img src="{{member.photoUrl || '../../../../../assets/iconUser.png'}}" alt="{{member.knownAs}}">
+    </div>
+    </div>
+    <div class="online" *ngIf="(presence.onlineUsers$ | async).includes(member.username)">
+        <p>Online</p>
     </div>
 
     <div class="field">
@@ -22,7 +26,7 @@
     </div>
 </div>
      
-    <div class="card-page"> 
+    <div class="card-page" *ngIf="member"> 
             <tabs >
 
                 <tab tabTitle="Photo" routerLinkActive="active">
@@ -32,7 +36,7 @@
                 </tab>
 
             <tab tabTitle="About" routerLinkActive="active">
-                <div class="summary">
+                <div class="summary" >
                     <h1>Summary</h1>
                     <p>{{member.introduction}}</p>
                 </div>
@@ -71,12 +75,12 @@
 
        </div>
 
-       <div class="message-tab" appMessage (click)="onActiveTab($event)" >
-        <div class="close" ><i class="fa fa-times-circle-o" appClose></i></div>
-        <app-member-messages [messages]="messages" [username]="member.username" ></app-member-messages>
-       </div>
+       <div class="message-tab" appMessage (click)="onActiveTab($event)" *ngIf="member">
+           <div class="close" appClose (click)="stopConnection()" ><span>x</span></div>
+           <app-member-messages [username]="member.username" ></app-member-messages>
+        </div>
 
 
-    </div>
+  
     
 

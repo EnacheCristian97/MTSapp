@@ -1,11 +1,12 @@
 import { Directive, ElementRef, HostBinding, HostListener, Renderer2 } from '@angular/core';
+import { MessageService } from '../_services/message.service';
 
 @Directive({
   selector: '[appClose]'
 })
 export class CloseDirective {
 
-  constructor(private el: ElementRef, private renderer: Renderer2) { }
+  constructor(private el: ElementRef, private renderer: Renderer2,private messageService: MessageService) { }
   
   @HostBinding('class.active') isOpen = false;
 
@@ -17,7 +18,7 @@ export class CloseDirective {
         {
          this.isOpen = false;
          this.renderer.removeClass(part, 'active');
-        } 
+        }
   } 
 
 }

@@ -16,13 +16,19 @@ export class MessageDirective {
         {
           this.isOpen = !this.isOpen
           this.renderer.addClass(part, 'active');
+          
         }
-        // else
-        // {
-        //   this.isOpen = false;
-        //   this.renderer.removeClass(part, 'active');
-        // } 
+        this.isOpen = false;
   } 
+
+  // @HostListener('document:click', ['$event']) toggleClose(event: Event) {
+  //   let part = document.querySelector('.message-tab');
+  //   if(this.el.nativeElement.contains(event.target) && this.isOpen == true )
+  //   {
+  //     this.isOpen = true;
+  //     this.renderer.removeClass(part, 'active');
+  //   } 
+  // }
 
 
 }
