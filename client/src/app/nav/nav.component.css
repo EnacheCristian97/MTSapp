@@ -162,17 +162,12 @@
     background: rgb(111, 99, 218);
 }
 
-.upload a span {
-    position: relative;
-    z-index: 1;
-    color: #000000;
-    opacity: 0.5;
-    text-transform: uppercase;
+.upload .up-img{
+    width: 20px;
+    height: 20px;
 }
 
-upload a:hover span{
-    opacity: 1;
-} 
+
 
 @keyframes animate{
     0%

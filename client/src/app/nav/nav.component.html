@@ -22,11 +22,11 @@
 
 <div class="interaction">
     <div class="upload" *ngIf="accountService.currentUser$| async">
-        <a routerLink="/upload" ><span>U</span></a>
+        <a routerLink="/upload" ><img src="../../assets/upload.svg" class="up-img" alt=""></a>
     </div>
     <div class="action" *ngIf="(accountService.currentUser$ | async) as user">
         <div class="profile" appDropdown>
-            <img src="{{user.photoUrl}}" alt="">
+            <img src="{{user.photoUrl || '../../../../../assets/userIcon.png'}}" alt="">
         </div>
             <div class="menu" >
                 <h3>{{user.knownAs}}</h3>

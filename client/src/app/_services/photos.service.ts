@@ -14,6 +14,8 @@ import { PhotoParams } from "../_models/photoParams";
     baseUrl = environment.apiUrl;
     photoCache = new Map();
     photos: Photo[] = [];
+    photo: Photo;
+    comment: Comment;
 
     constructor(private http: HttpClient) {}
 
@@ -74,6 +76,18 @@ import { PhotoParams } from "../_models/photoParams";
     
           return params;
     
+      }
+
+      addComment(comment: Comment){
+        return this.http.post<Comment>(this.baseUrl + 'photos/add-comment', comment).subscribe(data =>{
+          console.log(data);
+          const comment = JSON.stringify(this.comment);
+          this.photo.comments.push(data);
+        });
+      }
+
+      getComments(){
+        return this.http.get(this.baseUrl + 'maincomments/')
       }
 
   }

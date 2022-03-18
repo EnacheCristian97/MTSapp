@@ -1,5 +1,7 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
+using API.Entities.Comments;
 
 namespace API.Entities
 {
@@ -15,5 +17,6 @@ namespace API.Entities
         public DateTime Created { get; set; } = DateTime.Now;
         public AppUser AppUser { get; set; }
         public int AppUserId { get; set; }
+        public List<MainComment> MainComments { get; set; }
     }
 }

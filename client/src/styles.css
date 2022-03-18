@@ -6,9 +6,7 @@
 }
 
 body {
-    height: 100vh;
-    background: url("./assets/test-bk.jpg") no-repeat center;
-    background-size: auto;
+    background-color: rgb(97, 97, 97);
 }
 
 ::-webkit-scrollbar {

@@ -11,4 +11,5 @@ export interface Photo {
     appUser: Member;
     created: string;
     publicId: string;
+    comments: Comment[];
 }

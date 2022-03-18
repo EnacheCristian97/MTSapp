@@ -76,12 +76,12 @@ justify-content:flex-start;
     margin-top: 2.5%;
     z-index: -1000;
     width: 100%;
-    height: 500px;
+    height: 490px;
 }
 
 .cover img{
     width: 100%;
-    height: 500px;
+    height: 490px;
     object-fit: cover;
 }
 
@@ -184,7 +184,6 @@ tabs{
     background: rgba(225,225,225, 0.1);
     backdrop-filter: blur(20px);
     box-shadow: rgba(0,0,0, 0.1);
-    min-height: 430px;
     border-top: none;
     z-index: 1;
 }

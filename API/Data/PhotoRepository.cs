@@ -2,6 +2,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using API.DTOs;
 using API.Entities;
+using API.Entities.Comments;
 using API.Helpers;
 using API.Interfaces;
 using AutoMapper;
@@ -20,10 +21,17 @@ namespace API.Data
             _context = context;
         }
 
+        public void AddReplyComment(ReplyComment comment)
+        {
+            _context.ReplyComments.Add(comment);
+        }
+
         public async Task<PhotoDto> GetPhotoAsync(string publicId)
         {
             return await _context.Photos
             .Where(p => p.PublicId == publicId)
+            .Include(p => p.MainComments)
+                .ThenInclude(p => p.ReplyComments)
             .ProjectTo<PhotoDto>(_mapper.ConfigurationProvider)
             .SingleOrDefaultAsync();     
         }
@@ -50,6 +58,11 @@ namespace API.Data
         }
 
             public void Update(Photo photo)
+        {
+            _context.Entry(photo).State = EntityState.Modified;
+        }
+
+        public void UpdateComment (PhotoDto photo)
         {
             _context.Entry(photo).State = EntityState.Modified;
         }

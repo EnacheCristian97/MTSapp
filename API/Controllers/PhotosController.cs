@@ -1,7 +1,9 @@
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using API.DTOs;
 using API.Entities;
+using API.Entities.Comments;
 using API.Helpers;
 using API.Interfaces;
 using Microsoft.AspNetCore.Authorization;
@@ -28,8 +30,6 @@ namespace API.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<PhotoDto>>> GetPhotos([FromQuery]PhotoParams photoParams)
         {
-            // var photo = await _photoRepository.GetPhotoAsync();
-            // photoParams.CurrentIdUser = photo.AppUserId;
             var photos = await _photoRepository.GetPhotosAsync(photoParams);
 
             Response.AddPaginationHeader(photos.CurrentPage, photos.PageSize, photos.TotalCount, photos.TotalPages);
@@ -37,6 +37,42 @@ namespace API.Controllers
             return Ok(photos);
 
         }
+
+        [HttpPost("add-comment")]
+        public async Task<IActionResult> Comment(CommentDto commentDto)
+        {
+            var photo = await _photoRepository.GetPhotoAsync(commentDto.PostId);
+
+            if(commentDto.MainCommentId == 0)
+            {
+                photo.MainComments = photo.MainComments ?? new List<MainComment>();
+            
+
+            photo.MainComments.Add(new MainComment
+            {
+                Message = commentDto.Message,
+                Created = DateTime.Now
+            });
+            
+             _photoRepository.UpdateComment(photo);
+            
+            }
+            else
+            {
+                var comment = new ReplyComment
+                {
+                    MainCommentId = commentDto.MainCommentId,
+                    Message = commentDto.Message,
+                    Created = DateTime.Now
+                };
+            }
+
+            await _photoRepository.SaveAllAsync();
+
+            return Ok(photo);
+        }
+
+
 
     }
 }

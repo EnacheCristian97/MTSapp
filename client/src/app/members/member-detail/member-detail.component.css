@@ -189,7 +189,6 @@ tabs{
     background: rgba(225,225,225, 0.1);
     backdrop-filter: blur(20px);
     box-shadow: rgba(0,0,0, 0.1);
-    min-height: 430px;
     border-top: none;
     z-index: 1;
 }

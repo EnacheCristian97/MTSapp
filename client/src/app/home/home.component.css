@@ -20,7 +20,7 @@
 .top{
     position: fixed;
     bottom: 15px;
-    left: 50%;
+    right: 35px;
     transform: translate(-50%);
     
 }

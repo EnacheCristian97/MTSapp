@@ -31,10 +31,6 @@ export class MemberMessagesComponent implements OnInit {
     })
   }
 
-  scrollToBottom(){
-      var element = document.querySelector('.chat');
-      element.scrollTop = element.scrollHeight;
-  }
   }
 
 

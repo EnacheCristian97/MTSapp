@@ -20,6 +20,7 @@ export class MemberDetailComponent implements OnInit, OnDestroy {
   messages: Message[] = [];
   user: User;
   isOpen = false;
+  hubExist = false;
 
 
   constructor(private memberService : MembersService, 
@@ -50,21 +51,22 @@ export class MemberDetailComponent implements OnInit, OnDestroy {
     })
   }
 
-  onActiveTab(Data: Message){
+  onActiveTab(event: Event){
     
-    if(this.messages.length === 0 && !this.isOpen)
+    if(this.messages.length === 0 && !this.isOpen && !this.hubExist)
     {
       this.messageService.createHubConnection(this.user, this.member.username);
       this.isOpen = true;
-    }else{
-      this.messageService.stopHubConnection();
-      this.isOpen = false;
+      this.hubExist = true;
+    }
+    else if(!this.isOpen && this.hubExist){
+      this.hubExist = false;
     }
   }
 
   stopConnection(){
     this.messageService.stopHubConnection();
-    // this.isOpen = false;
+    this.isOpen = false;
   }
 
   ngOnDestroy(): void {

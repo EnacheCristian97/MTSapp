@@ -1,5 +1,7 @@
 using System;
+using System.Collections.Generic;
 using API.Entities;
+using API.Entities.Comments;
 
 namespace API.DTOs
 {
@@ -14,5 +16,6 @@ namespace API.DTOs
         public DateTime Created { get; set; }
         public MemberDto AppUser { get; set; }
         public int AppUserId { get; set; }
+        public List<MainComment> MainComments { get; set; }
     }
 }
